@@ -56,8 +56,29 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .loli-button {
-    color:rebeccapurple;
-  }
+<style lang="stylus" scoped>
+  // 背景颜色
+  bgColor = #0469c8
+  // 按钮基本样式
+  .loli-button
+    display block
+    text-align center
+    width 100%
+    padding 13px 0
+    font-size 18px
+    border-radius 6px
+    box-sizing border-box
+    // 默认按钮样式
+    &--default
+      color #fff
+      opacity .9
+      background-color bgColor
+      &:active
+        background darken(bgColor, 10%);
+        color: darken(#fff, 10%)
+
+    // 默认大小
+    &--normal
+      padding 13px 21.5px 13px 35.8px
+
 </style>

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import UiInfo from '@/components/UiInfo';
+import Index from '@/example/index';
 
 Vue.use(Router);
 
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'UiInfo',
-      component: UiInfo
+      name: 'Index',
+      component: Index
     }
   ]
 });

@@ -68,6 +68,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
+
+// dev stylus-loader
+devWebpackConfig.module.rules.push(
+  {
+    test: /\.styl$/,
+    use: [
+      'style-loader',
+      'css-loader',
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true,
+        }
+      },
+      'stylus-loader'
+    ]
+  }
+)
+
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {
