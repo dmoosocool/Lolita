@@ -9,7 +9,7 @@
       <span>基础组件</span>
     </div>
     <router-link :to="{ path: 'button'} ">
-      <loli-button type="default" tag="button">按钮</loli-button>
+      <loli-button type="default" tag="button" size="large">按钮</loli-button>
     </router-link>
   </div>
 </template>
