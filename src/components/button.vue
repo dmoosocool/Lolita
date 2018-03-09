@@ -57,28 +57,60 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-  // 背景颜色
-  bgColor = #0469c8
+  $defaultColor = #fff
+  $primaryColor = #0469c8
+  $warningColor = #e94f4f
   // 按钮基本样式
   .loli-button
-    display block
+    display inline-block
     text-align center
-    width 100%
     padding 13px 0
     font-size 18px
     border-radius 6px
     box-sizing border-box
+    opacity .9
+    outline none
     // 默认按钮样式
     &--default
-      color #fff
-      opacity .9
-      background-color bgColor
+      color #000
+      background-color $defaultColor
+      border 1px solid darken($defaultColor, 20%)
       &:active
-        background darken(bgColor, 10%);
-        color: darken(#fff, 10%)
+        background darken($defaultColor, 10%)
+        color: darken(#000, 10%)
+
+    // 主要按钮
+    &--primary
+      color #fff
+      background-color $primaryColor
+      border 1px solid darken($primaryColor, 20%)
+      &:active
+        background darken($primaryColor, 10%)
+        color darken(#fff, 10%)
+
+    // 警告按钮
+    &--warning
+      color #fff
+      background-color $warningColor
+      border 1px solid darken($warningColor, 20%)
+      &:active
+        background-color darken($warningColor, 10%)
+        color darken(#fff, 10%)
+
+    // 禁用样式
+    &--disabled
+      pointer-events none
+      color rgba(255, 255, 255, .6)
+      opacity .4
 
     // 默认大小
     &--normal
-      padding 13px 21.5px 13px 35.8px
+      padding 13px 0
 
+    &--large
+      width 100%
+
+  // 默认按钮的禁用字体颜色
+  .loli-button--default.loli-button--disabled
+    color #000
 </style>

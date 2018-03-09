@@ -1,11 +1,16 @@
 <template>
-  <div>
+  <div id="example">
     <div class="header">
         <img class="logo" src="../assets/lolita-logo.jpeg"/>
         <br/>
         <p class="words">{{ msg }}</p>
     </div>
-    <loli-button type="default" tag="button">按钮</loli-button>
+    <div class="demo-block-title">
+      <span>基础组件</span>
+    </div>
+    <router-link :to="{ path: 'button'} ">
+      <loli-button type="default" tag="button">按钮</loli-button>
+    </router-link>
   </div>
 </template>
 
