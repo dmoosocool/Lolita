@@ -8,13 +8,14 @@ import 'lib-flexible';
 import Row from '@/components/row';
 import Col from '@/components/col';
 import Button from '@/components/button';
-import Accordion from '@/components/accordion';
+import Accordion from '@/components/accordion/group';
+import AccordionItem from '@/components/accordion/item';
 
 Vue.component('loli-button', Button);
 Vue.component('loli-row', Row);
 Vue.component('loli-col', Col);
 Vue.component('loli-accordion', Accordion);
-
+Vue.component('loli-accordion-item', AccordionItem);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
