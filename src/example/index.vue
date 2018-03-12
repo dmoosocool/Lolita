@@ -16,6 +16,10 @@
     <router-link :to="{ path: 'button'} ">
       <loli-button type="default" tag="button" size="large">Button - 按钮</loli-button>
     </router-link>
+
+    <router-link :to="{ path: 'Accordion'} ">
+      <loli-button type="default" tag="button" size="large">Accordion - 手风琴</loli-button>
+    </router-link>
   </div>
 </template>
 
@@ -47,5 +51,4 @@ export default {
       margin: 8px 0;
       font-size 14px
       color #456a64
-
 </style>

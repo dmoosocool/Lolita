@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Index from '@/example/index';
 import Button from '@/example/button';
 import Layout from '@/example/layout';
+import Accordion from '@/example/accordion';
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/layout',
       name: 'Layout',
       component: Layout
+    },
+    {
+      path: '/accordion',
+      name: 'Accordion',
+      component: Accordion
     }
   ]
 });
