@@ -8,8 +8,13 @@
     <div class="demo-block-title">
       <span>基础组件</span>
     </div>
+
+    <router-link :to="{ path: 'layout'} ">
+      <loli-button type="default" tag="button" size="large">Layout - 布局</loli-button>
+    </router-link>
+
     <router-link :to="{ path: 'button'} ">
-      <loli-button type="default" tag="button" size="large">按钮</loli-button>
+      <loli-button type="default" tag="button" size="large">Button - 按钮</loli-button>
     </router-link>
   </div>
 </template>
@@ -29,6 +34,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
+  #example a
+    display block
+    margin-bottom 10px
   .header
     text-align center
     margin: 20px 0

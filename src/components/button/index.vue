@@ -10,8 +10,7 @@
       {
         'loli-button--disabled': disabled,
         'loli-button--loading': loading,
-        'loli-button--block': block,
-        'loli-button--buttom-action': buttonAction
+        'loli-button--block': block
       }
     ]"
     @click="onClick"
@@ -31,7 +30,6 @@ export default {
     loading: Boolean,
     disabled: Boolean,
     nativeType: String,
-    buttonAction: Boolean,
     tag: {
       type: String,
       default: 'button'
@@ -65,6 +63,7 @@ export default {
     display inline-block
     text-align center
     padding 13px 0
+    line-height 28px
     font-size 18px
     border-radius 6px
     box-sizing border-box
@@ -105,8 +104,13 @@ export default {
 
     // 默认大小
     &--normal
-      padding 13px 0
-
+      padding 5px 10px
+      font-size 14px
+    // 小按钮
+    &--small
+      padding 0 6px
+      font-size 10px
+    // 大按钮
     &--large
       width 100%
 

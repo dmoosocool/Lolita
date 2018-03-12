@@ -6,24 +6,12 @@
 
 <script>
 export default {
-  name: "App"
+  name: 'App'
 };
 </script>
 
 <style lang="stylus">
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  color: #333;
-  line-height: 1;
-  background-color: #fcfcfc;
-  font-family: Arial, Helvetica, STHeiti STXihei, Microsoft YaHei, Tohoma, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
+@import './components/baseStyles/index.styl'
 #example {
   padding: 0 15px;
 }
