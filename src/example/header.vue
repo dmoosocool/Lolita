@@ -1,21 +1,42 @@
 <template>
-  <div id="example">
+  <div id="headerExample">
+    <div class="page-header-main">
+      <loli-Header fixed msg="这是solt">
+      固定在顶部
+    </loli-Header>
+    </div>
+     <loli-Header msg="这是solt">
+        标题过长会隐藏后面的内容啊哈哈哈哈
+    </loli-Header>
+     <loli-Header msg="这是solt">
+      <div slot="left">恩</div>
+        左边有文案
+    </loli-Header>
+     <loli-Header msg="这是solt">
+      <router-link to="/" slot="left">返回</router-link>
+        左边可点击
+    </loli-Header>
     <loli-Header msg="这是solt">
-      <router-link to="/button" slot="left">返回</router-link>
-        这是标题
-      <div slot="right">分享</div>
+        右边文案
+      <div slot="right">哈</div>
     </loli-Header>
   </div>
 </template>
 <script>
 export default {
-
 };
 </script>
 <style lang="stylus" scoped>
-#example .loli-header {
-  background-color: #26a2ff;
-  color: #fff;
+#headerExample {
+  .loli-header {
+    background-color: #26a2ff;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  .page-header-main {
+    margin-top: 90px;
+  }
 }
 </style>
 

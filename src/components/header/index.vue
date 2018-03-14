@@ -1,5 +1,5 @@
 <template>
-   <component :is="'div'" class="loli-header">
+   <component :is="'header'" class="loli-header" :class="{'loli-header-isFixed':fixed}">
      <div class="loli-header-left">
         <slot name="left"></slot>
      </div>
@@ -14,6 +14,7 @@ export default {
   name: 'loli-Header',
   props: {
     msg: String,
+    fixed: Boolean,
   },
 };
 </script>
@@ -33,6 +34,15 @@ $fontColor = #000;
   white-space: nowrap;
   color: $fontColor;
   background-color: $bgColor;
+  box-sizing: border-box;
+
+  &.loli-header-isFixed {
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+  }
 
   .loli-header-left, .loli-header-right {
     flex: 0.5;
@@ -53,6 +63,9 @@ $fontColor = #000;
     font-size: inherit;
     line-height: 2.8;
     flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 </style>

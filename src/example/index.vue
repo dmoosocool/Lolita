@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import Button from '@/components/button';
 
 export default {
   name: 'UIExample',
