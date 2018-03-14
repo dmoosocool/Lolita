@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: 'loli-Header',
+  name: 'loli-header',
   props: {
     msg: String,
     fixed: Boolean,
