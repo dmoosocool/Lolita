@@ -8,7 +8,7 @@ import 'lib-flexible';
 import Row from '@/components/row';
 import Col from '@/components/col';
 import Button from '@/components/button';
-import Header from '@/components/Header';
+import Header from '@/components/header';
 import Accordion from '@/components/accordion/group';
 import AccordionItem from '@/components/accordion/item';
 

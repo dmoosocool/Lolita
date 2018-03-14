@@ -18,8 +18,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-$bgColor = #26a2ff;
-$fontColor = #fff;
+$bgColor = #fff;
+$fontColor = #000;
 
 .loli-header {
   padding: 0 10px;
