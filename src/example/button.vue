@@ -18,8 +18,10 @@
     <div class="demo-block-title">
       <span>按钮大小</span>
     </div>
+    <loli-button type="default" tag="button" size="large">大按钮</loli-button><br/>
+    <loli-button type="default" tag="button" size="normal">正常按钮</loli-button><br/>
+    <loli-button type="default" tag="button" size="small">小按钮</loli-button>
 
-       
   </div>
 </template>
 <script>
