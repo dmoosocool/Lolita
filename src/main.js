@@ -12,7 +12,7 @@ import Header from '@/components/header';
 import Accordion from '@/components/accordion/group';
 import AccordionItem from '@/components/accordion/item';
 
-Vue.component('loli-Header', Header);
+Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
 Vue.component('loli-row', Row);
 Vue.component('loli-col', Col);
