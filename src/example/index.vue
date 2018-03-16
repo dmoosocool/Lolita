@@ -52,6 +52,9 @@ export default {
             path: 'Header'
           },
           {
+            text: 'Dialog - 对话框',
+            path: 'Dialog'
+          },{
             text: 'popup - 弹出框',
             path: 'popup'
           },{
