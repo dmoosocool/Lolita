@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Index from '@/example/index';
 import Button from '@/example/button';
+import Seletor from '@/example/seletorExp';
 import Header from '@/example/header';
 import Accordion from '@/example/accordion';
 import Selection from '@/example/selection';
@@ -20,8 +21,7 @@ export default new Router({
     path: '/',
     name: 'Index',
     component: Index
-  },
-  {
+  }, {
     path: '/button',
     name: 'Button',
     component: Button
@@ -73,6 +73,10 @@ export default new Router({
     path: '/step',
     name: 'Step',
     component: Step
+  }, {
+    path: '/Seletor',
+    name: 'Seletor',
+    component: Seletor
   }
   ]
 });

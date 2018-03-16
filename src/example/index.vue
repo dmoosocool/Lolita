@@ -63,6 +63,9 @@ export default {
           },{
             text:'step--步骤',
             path:'step'
+          },{
+            text:'seletor--选择器',
+            path:'Seletor'
           }
         ],
       },
