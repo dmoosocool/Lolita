@@ -1,11 +1,11 @@
 <template>
 
-  <div :class="['seletor-box',isShowSeletor?'seletor-on':'seletor-off']">
+  <div :class="['seletor-box',dataList.isShowSeletor?'seletor-on':'seletor-off']">
     <div class="mask"></div>
     <transition name="showUp">
-      <div :class="['seletor-main',isShowSeletorMain?'slideUp':'slideDown']">
-        <Seletornav :title="title" @closeBtn="closeSeletor" @comformBtn="comformSeletor"/>
-        <Seletoritem :dataList="dataList" @tabs = "seletorItemsTap"/>
+      <div :class="['seletor-main',dataList.isShowSeletorMain?'slideUp':'slideDown']">
+        <Seletornav :title="dataList.title" @closeBtn="closeSeletor" @comformBtn="comformSeletor"/>
+        <Seletoritem :dataList="dataList.data" @tabs = "seletorItemsTap"/>
       </div>
     </transition>
   </div>
@@ -16,28 +16,11 @@ import Seletornav from './seletorNav.vue';
 import Seletoritem from './seletorItems.vue';
 
 export default {
-  data(){
-    return {
-      title:'学历',
-      dataList:[
-        {code:'01',name:'高中'},
-        {code:'02',name:'本科'},
-        {code:'03',name:'专科'},
-        {code:'04',name:'初中'},
-        {code:'05',name:'硕士'},
-        {code:'06',name:'博士'},
-        {code:'07',name:'小学'},
-        {code:'08',name:'其他'},
-
-      ],
-      isShowSeletor:true,
-      isShowSeletorMain:true,
-      domViewData:{
-        isPaint:false,
-        code:'',
-        name:''
-      }
-    };
+  props:{
+    dataList:{
+      type:Object,
+      required:true
+    }
   },
   components: {
     Seletornav,
@@ -46,26 +29,26 @@ export default {
   methods:{
     closeSeletor(){
       const self = this;
-      self.isShowSeletorMain = false;
+      self.dataList.isShowSeletorMain = false;
       setTimeout(function(){
-        self.isShowSeletor = false;
+        self.dataList.isShowSeletor = false;
       },500);
     },
     comformSeletor(){
       const self = this;
-      if(self.domViewData.code!=''&&self.domViewData.name!=''){
-        self.domViewData.isPaint = true;
-        self.isShowSeletorMain = false;
+      if(self.dataList.domViewData.code!=''&&self.dataList.domViewData.name!=''){
+        self.dataList.domViewData.isPaint = true;
+        self.dataList.isShowSeletorMain = false;
         setTimeout(function(){
-          self.isShowSeletor = false;
+          self.dataList.isShowSeletor = false;
         },500);
       }else {
         alert('请选择一项');
       }
     },
     seletorItemsTap(e){
-      this.domViewData.code = e.target.dataset.id;
-      this.domViewData.name = e.target.innerText;
+      this.dataList.domViewData.code = e.target.dataset.id;
+      this.dataList.domViewData.name = e.target.innerText;
     }
   },
 

@@ -40,6 +40,10 @@ export default {
           {
             text: 'Header - 头部',
             path: 'Header'
+          },
+          {
+            text: 'Seletor - 单级选择',
+            path: 'Seletor'
           }
         ],
       },
