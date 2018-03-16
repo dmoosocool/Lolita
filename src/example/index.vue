@@ -56,7 +56,8 @@ export default {
           },
           {
             text:'Step - 步骤',
-            path:'step'
+            text: 'Dialog - 对话框',
+            path: 'Dialog'
           }
         ],
         form: [
