@@ -16,13 +16,12 @@
 </template>
 
 <script>
-import Button from '@/components/button';
 
 export default {
   name: 'UIExample',
-  data () {
+  data() {
     return {
-      routers:{
+      routers: {
         // 基础组件
         base: [
           {
@@ -48,27 +47,40 @@ export default {
           {
             text: 'CheckBox - 复选框',
             path: 'checkBox'
+          },
+          {
+            text: 'Header - 头部',
+            path: 'Header'
           }
         ],
       },
       msg: 'Lolita 移动端 Vue 组件库'
     };
+  },
+  mounted() {
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-#example a
-  display block
-.header
-  text-align center
-  margin: 20px 0
-  .logo
-    width 50%
-    margin 0 auto
-  .words
+#example a {
+  display: block;
+}
+
+.header {
+  text-align: center;
+  margin: 20px 0;
+
+  .logo {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .words {
     margin: 8px 0;
-    font-size 14px
-    color #456a64
+    font-size: 14px;
+    color: #456a64;
+  }
+}
 </style>

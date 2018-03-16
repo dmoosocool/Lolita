@@ -1,10 +1,7 @@
 <template>
-   <div 
-    :class="'loli-radio-eachitem-'+(checkedStatus?'checked':'unChecked')"
-    class="loli-radio-eachitem"
-    >
+   <div class="loli-radio-eachitem" @click="onClick">
       <label class="loli-radio-label">{{customizeText}}</label>
-      <input type="radio" class="loli-radio-input" :value="customizeValue" :name="customizeName" @click="onClick">
+      <input type="radio" class="loli-radio-input" :value="customizeValue" :name="customizeName">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-radio"></use>
       </svg>
@@ -19,23 +16,20 @@ import '../../assets/icon/iconfont.js';
 export default {
   name: 'loli-radio-item',
   props: {
-    selectionStatus:{
-      type:Boolean,
-      default:false
-    },
     customizeText: String,
     customizeValue:String,
-    customizeName:String,
+    customizeName:{
+      type:String
+    },
   },
   data(){
     return{
-      checkedStatus:this.selectionStatus,
       counterArray:[]
     };
   },
   methods:{
-    onClick(){
-      return this.checkedStatus=!this.checkedStatus;
+    onClick(event){
+      this.$emit('click',event);
     }
   }
 };
@@ -51,6 +45,7 @@ export default {
 .loli-radio-eachitem
   margin 10px 0
   position relative
+  background-color #fff
   .loli-radio-label
     position absolute
     left 5px

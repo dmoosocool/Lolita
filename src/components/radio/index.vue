@@ -2,7 +2,7 @@
    <div class="loli-radio-group">
       <h2 class="loli-radio-group-title">{{customizeTitle}}</h2>
       <div class="loli-radio-items">
-        <slot></slot>
+        <slot name="radioItems"></slot>
       </div>
    </div>
 </template>
@@ -37,5 +37,4 @@ export default {
     padding 20px 15px 0px 20px
   .loli-radio-items
     padding: 10px 20px
-    background-color #fff
 </style>

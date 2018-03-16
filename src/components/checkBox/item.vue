@@ -1,10 +1,7 @@
 <template>
-  <div
-   :class="'loli-checkbox-eachitem-'+(selectionStatus?'checked':'unChecked')"
-   class="loli-checkbox-eachitem"
-   >
+  <div class="loli-checkbox-eachitem" @click="onClick">
     <label class="loli-checkbox-label">{{customizeText}}</label>
-    <input type="checkBox" class="loli-checkbox-input" :value="customizeValue" :name="customizeName" @click="onClick">
+    <input type="checkBox" class="loli-checkbox-input" :value="customizeValue">
     <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-checkbox"></use>
     </svg>
@@ -20,24 +17,18 @@ export default {
   name:'loli-checkbox-item',
   props:{
     customizeText:String,
-    customizeValue:String,
-    customizeName:String,
-    checkedStatus:{
-      type:Boolean,
-      default:false
-    }
+    customizeValue:String
   },
   data() {
     return {
-      selectionStatus:this.checkedStatus
     };
   },
   created() {
       
   },
   methods: {
-    onClick(){
-      return this.selectionStatus=!this.selectionStatus;
+    onClick(event){
+      this.$emit('click',event);
     }
   }
 };

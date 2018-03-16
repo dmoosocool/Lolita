@@ -11,7 +11,8 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './components/baseStyles/index.styl'
+@import './components/baseStyles/index.styl';
+
 #example {
   padding: 0 15px;
 }
