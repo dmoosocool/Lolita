@@ -11,6 +11,11 @@ import Button from '@/components/button';
 import Header from '@/components/header';
 import Accordion from '@/components/accordion/group';
 import AccordionItem from '@/components/accordion/item';
+import Selection from '@/components/selection';
+import Radio from '@/components/radio';
+import RadioItem from '@/components/radio/item';
+import CheckBox from '@/components/checkBox';
+import CheckBoxItem from '@/components/checkBox/item';
 import Popup from '@/components/popup';
 import Loading from '@/components/loading';
 import Progress from '@/components/progress';
@@ -24,6 +29,11 @@ Vue.component('loli-row', Row);
 Vue.component('loli-col', Col);
 Vue.component('loli-accordion', Accordion);
 Vue.component('loli-accordion-item', AccordionItem);
+Vue.component('loli-selection', Selection);
+Vue.component('loli-radio', Radio);
+Vue.component('loli-radio-item', RadioItem);
+Vue.component('loli-checkbox', CheckBox);
+Vue.component('loli-checkbox-item', CheckBoxItem);
 Vue.component('loli-popup', Popup);
 Vue.component('loli-loading', Loading);
 Vue.component('loli-progress', Progress);
@@ -34,9 +44,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
-  router, 
-  components: {
-    App
-  },
+  router,
+  components: { App },
   template: '<App/>'
 });

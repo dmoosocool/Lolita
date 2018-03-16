@@ -4,6 +4,10 @@ import Index from '@/example/index';
 import Button from '@/example/button';
 import Header from '@/example/header';
 import Accordion from '@/example/accordion';
+import Selection from '@/example/selection';
+import Radio from '@/example/radio';
+import CheckBox from '@/example/checkBox';
+
 import Layout from '@/example/layout';
 import Popup from '@/example/popup';
 import Loading from '@/example/loading';
@@ -36,6 +40,21 @@ export default new Router({
     path: '/accordion',
     name: 'Accordion',
     component: Accordion
+  },
+  {
+    path: '/selection',
+    name: 'Selection',
+    component: Selection
+  },
+  {
+    path: '/radio',
+    name: 'Radio',
+    component: Radio
+  },
+  {
+    path: '/checkBox',
+    name: 'CheckBox',
+    component: CheckBox
   },
   {
     path: '/popup',

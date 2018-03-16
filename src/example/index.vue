@@ -33,6 +33,20 @@ export default {
           {
             text: 'Accordion - 手风琴',
             path: 'accordion'
+          },
+          {
+            text: 'Selection - checkBox',
+            path: 'selection'
+          },
+          {
+            text: 'Radio - 单项选择',
+            path: 'radio'
+          },
+          {
+            text: 'CheckBox - 复选框',
+            path: 'checkBox'
+          },
+          {
           },{
             text: 'Header - 头部',
             path: 'Header'
