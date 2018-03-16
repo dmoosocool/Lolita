@@ -5,6 +5,7 @@ import Button from '@/example/button';
 import Header from '@/example/header';
 import Accordion from '@/example/accordion';
 import Layout from '@/example/layout';
+import Dialog from '@/example/dialog';
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -29,6 +30,10 @@ export default new Router({
       path: '/accordion',
       name: 'Accordion',
       component: Accordion
+    }, {
+      path: '/dialog',
+      name: 'Dialog',
+      component: Dialog
     }
   ]
 });

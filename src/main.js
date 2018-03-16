@@ -11,18 +11,19 @@ import Button from '@/components/button';
 import Header from '@/components/header';
 import Accordion from '@/components/accordion/group';
 import AccordionItem from '@/components/accordion/item';
-
+import Dialog from '@/components/dialog';
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
 Vue.component('loli-row', Row);
 Vue.component('loli-col', Col);
 Vue.component('loli-accordion', Accordion);
 Vue.component('loli-accordion-item', AccordionItem);
+Vue.component('loli-dialog', Dialog);
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router, 
+  router,
   components: {
     App
   },

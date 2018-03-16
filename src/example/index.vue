@@ -39,6 +39,10 @@ export default {
           {
             text: 'Header - 头部',
             path: 'Header'
+          },
+          {
+            text: 'Dialog - 弹出框',
+            path: 'Dialog'
           }
         ],
       },
