@@ -11,6 +11,10 @@
     <router-link :to="{ path: 'button'} ">
       <loli-button type="default" tag="button" size="large">按钮</loli-button>
     </router-link>
+
+    <router-link :to="{ path: 'seletor'} ">
+      <loli-button type="default" tag="button" size="large">单项下拉选择</loli-button>
+    </router-link>
   </div>
 </template>
 
