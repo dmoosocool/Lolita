@@ -5,7 +5,7 @@
         <br/>
         <p class="words">{{ msg }}</p>
     </div>
-    <loli-accordion title="基础组件">
+    <loli-accordion title="基础组件" show>
       <template v-for="item in routers.base">
         <loli-accordion-item :key="item.text">
           <router-link :to="{ path: item.path}">{{item.text}}</router-link>
