@@ -14,9 +14,7 @@
     </loli-accordion>
   </div>
 </template>
-
 <script>
-
 export default {
   name: 'UIExample',
   data() {
@@ -37,16 +35,44 @@ export default {
             path: 'accordion'
           },
           {
+            text: 'Selection - checkBox',
+            path: 'selection'
+          },
+          {
+            text: 'Radio - 单项选择',
+            path: 'radio'
+          },
+          {
+            text: 'CheckBox - 复选框',
+            path: 'checkBox'
+          },
+          {
+          },{
             text: 'Header - 头部',
             path: 'Header'
           },
           {
-            text: 'Dialog - 弹出框',
+            text: 'Dialog - 对话框',
             path: 'Dialog'
+          },{
+            text: 'popup - 弹出框',
+            path: 'popup'
+          },{
+            text:'loading -加载',
+            path:'loading'
+          },{
+            text:'progress--进度条',
+            path:'progress'
+          },{
+            text:'step--步骤',
+            path:'step'
+          },{
+            text:'seletor--选择器',
+            path:'Seletor'
           }
         ],
       },
-      msg: 'Lolita 移动端 Vue 组件库'
+      msg: 'Lolita 移动端 Vue 组件库',
     };
   },
   mounted() {
