@@ -1,7 +1,7 @@
 <template>
   <div
     class="loli-accordion-group"
-    :accordion="accordion"
+    :show="show"
     :class="'loli-accordion-group--' + ( componentStatus ? 'show' : 'hide')"
   >
     <div class="loli-accordion-group--title" @click="onClick">
@@ -28,10 +28,6 @@ export default {
     show: {
       type: Boolean,
       default: false
-    },
-    accordion: {
-      type: Boolean,
-      default: false
     }
   },
   methods: {
@@ -56,7 +52,7 @@ export default {
     margin 0 20px
   &--content
     margin 0 20px 10px 20px
-  
+
   &--show &--content
     display block
   &--show &--title

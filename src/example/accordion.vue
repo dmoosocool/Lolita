@@ -34,6 +34,20 @@
       </div>
     </loli-accordion>
 
+
+    <div class="demo-block-title">
+      <span>手风琴 - 默认展开</span>
+    </div>
+
+    <loli-accordion title="基础组件" show=true>
+      <loli-accordion-item text="基础组件1"/>
+      <loli-accordion-item text="基础组件2"/>
+      <loli-accordion-item text="基础组件3"/>
+      <loli-accordion-item text="基础组件4"/>
+      <loli-accordion-item text="基础组件5"/>
+    </loli-accordion>
+
+
   </div>
 </template>
 <script>
@@ -62,5 +76,5 @@ export default {
 
 <style lang="stylus" scoped>
 .loli-accordion-item a
-  display block    
+  display block
 </style>
