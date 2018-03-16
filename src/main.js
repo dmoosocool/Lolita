@@ -16,6 +16,12 @@ import Radio from '@/components/radio';
 import RadioItem from '@/components/radio/item';
 import CheckBox from '@/components/checkBox';
 import CheckBoxItem from '@/components/checkBox/item';
+import Popup from '@/components/popup';
+import Loading from '@/components/loading';
+import Progress from '@/components/progress';
+import Steps from '@/components/steps';
+import Step from '@/components/steps/step';
+
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -28,8 +34,14 @@ Vue.component('loli-radio', Radio);
 Vue.component('loli-radio-item', RadioItem);
 Vue.component('loli-checkbox', CheckBox);
 Vue.component('loli-checkbox-item', CheckBoxItem);
+Vue.component('loli-popup', Popup);
+Vue.component('loli-loading', Loading);
+Vue.component('loli-progress', Progress);
+Vue.component('loli-steps', Steps);
+Vue.component('loli-step', Step);
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,

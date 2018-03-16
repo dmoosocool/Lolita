@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#example .loli-button
-  margin 5px 0
+#example .loli-button {
+  margin: 5px 0;
+}
 </style>

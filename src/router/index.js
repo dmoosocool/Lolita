@@ -9,6 +9,10 @@ import Radio from '@/example/radio';
 import CheckBox from '@/example/checkBox';
 
 import Layout from '@/example/layout';
+import Popup from '@/example/popup';
+import Loading from '@/example/loading';
+import Progress from '@/example/progress';
+import Step from '@/example/step';
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -21,6 +25,11 @@ export default new Router({
     path: '/button',
     name: 'Button',
     component: Button
+  },
+  {
+    path: '/Header',
+    name: 'Header',
+    component: Header
   },
   {
     path: '/layout',
@@ -48,9 +57,22 @@ export default new Router({
     component: CheckBox
   },
   {
-    path: '/Header',
-    name: 'Header',
-    component: Header
+    path: '/popup',
+    name: 'Popup',
+    component: Popup
   },
+  {
+    path: '/loading',
+    name: 'Loading',
+    component: Loading
+  }, {
+    path: '/progress',
+    name: 'Progress',
+    component: Progress
+  }, {
+    path: '/step',
+    name: 'Step',
+    component: Step
+  }
   ]
 });
