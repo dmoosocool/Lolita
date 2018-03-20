@@ -47,17 +47,24 @@ export default {
             path: 'popup'
           },
           {
-            text:'Loading - 加载',
-            path:'loading'
+            text: 'Loading - 加载',
+            path: 'loading'
           },
           {
-            text:'Progress - 进度条',
-            path:'progress'
+            text: 'Progress - 进度条',
+            path: 'progress'
           },
           {
-            text:'Step - 步骤',
+            text: 'Step - 步骤',
+            path: 'step'
+          },
+          {
             text: 'Dialog - 对话框',
-            path: 'Dialog'
+            path: 'dialog'
+          },
+          {
+            text: 'Message - 消息框',
+            path: 'message'
           }
         ],
         form: [
@@ -70,8 +77,8 @@ export default {
             path: 'selection'
           },
           {
-            text:'Seletor - 选择器',
-            path:'Seletor'
+            text: 'Seletor - 选择器',
+            path: 'Seletor'
           },
           {
             text: 'Radio - 单选框',
@@ -93,12 +100,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-#example
-  .loli-accordion-group
-    margin-bottom 10px
-  a
-    display: block;
+#example {
+  .loli-accordion-group {
+    margin-bottom: 10px;
+  }
 
+  a {
+    display: block;
+  }
+}
 
 .header {
   text-align: center;
