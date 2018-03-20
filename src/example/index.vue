@@ -66,6 +66,9 @@ export default {
           },{
             text:'seletor--选择器',
             path:'Seletor'
+          },{
+            text:'Actionsheet--底部弹出框',
+            path:'Actionsheet'
           }
         ],
       },
