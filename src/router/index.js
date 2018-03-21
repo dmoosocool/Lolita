@@ -15,7 +15,7 @@ import Popup from '@/example/popup';
 import Loading from '@/example/loading';
 import Progress from '@/example/progress';
 import Step from '@/example/step';
-
+import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
 
 Vue.use(Router);
@@ -35,7 +35,7 @@ export default new Router({
       name: 'Dialog',
       component: Dialog
     }, {
-      path: '/Header',
+      path: '/header',
       name: 'Header',
       component: Header
     }, {
@@ -78,6 +78,10 @@ export default new Router({
       path: '/Seletor',
       name: 'Seletor',
       component: Seletor
+    }, {
+      path: '/message',
+      name: 'Message',
+      component: Message
     }, {
       path: '/Actionsheet',
       name: 'Actionsheet',

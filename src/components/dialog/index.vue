@@ -8,8 +8,8 @@
          <slot>{{text}}</slot>
        </div>
        <div class="loli-dialog-footer" :class="{'isTwoBtn':isTwo}">
-         <button class="loli-dialog-button cancel" @click="hide(0)">取消</button>
-          <button class="loli-dialog-button confirm" @click="hide(1)">确定</button>
+         <button class="loli-dialog-button cancel" @click="hide(false)">取消</button>
+          <button class="loli-dialog-button confirm" @click="hide(true)">确定</button>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ export default {
     hide(isConfirm) {
       this.isShow = false;
       this.$nextTick(() => {
-        //通过传出的status值判断点击哪个按钮 0 取消/ 1 确定
+        //通过传出的status值判断点击哪个按钮 false 取消/ true 确定
         this.$emit('status', isConfirm);
       });
     }
@@ -87,11 +87,11 @@ $contextColor = #999;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate3d(-50%, -50%, 0);
     width: 85%;
     text-align: center;
     overflow: hidden;
     border-radius: 4px;
-    transform: translate3d(-50%, -50%, 0);
     z-index: $Zindex + 2;
     background-color: #fff;
     font-size: 16px;
