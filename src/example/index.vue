@@ -89,8 +89,8 @@ export default {
             path: 'checkBox'
           },
           {
-              text:'Actionsheet--底部弹出框',
-              path:'Actionsheet'
+            text:'Actionsheet--底部弹出框',
+            path:'Actionsheet'
           }
         ]
       },
