@@ -55,7 +55,6 @@ export default {
             path:'progress'
           },
           {
-            text:'Step - 步骤',
             text: 'Dialog - 对话框',
             path: 'Dialog'
           }
@@ -80,6 +79,10 @@ export default {
           {
             text: 'CheckBox - 复选框',
             path: 'checkBox'
+          },
+          {
+              text:'Actionsheet--底部弹出框',
+              path:'Actionsheet'
           }
         ]
       },

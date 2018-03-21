@@ -15,6 +15,9 @@ import Popup from '@/example/popup';
 import Loading from '@/example/loading';
 import Progress from '@/example/progress';
 import Step from '@/example/step';
+
+import Actionsheet from '@/example/actionsheet';
+
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -75,6 +78,10 @@ export default new Router({
       path: '/Seletor',
       name: 'Seletor',
       component: Seletor
+    }, {
+      path: '/Actionsheet',
+      name: 'Actionsheet',
+      component: Actionsheet
     }
   ]
 });

@@ -32,7 +32,7 @@ export default {
       self.dataList.isShowSeletorMain = false;
       setTimeout(function(){
         self.dataList.isShowSeletor = false;
-      },500);
+      },200);
     },
     comformSeletor(){
       const self = this;
@@ -41,7 +41,7 @@ export default {
         self.dataList.isShowSeletorMain = false;
         setTimeout(function(){
           self.dataList.isShowSeletor = false;
-        },500);
+        },200);
       }else {
         alert('请选择一项');
       }
@@ -71,17 +71,18 @@ export default {
     min-height: 2.7rem
     max-height: 60%
     background-color: #fcfcfc
-    transition transform .5s
+    transition transform .2s ease-out
     // animation: lichSelMove .4s;
     // -webkit-animation: lichSelMove .4s;
   .mask
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.3);
-    z-index: 100;
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,.7)
+    z-index: 100
+    transition background .2s easy-out
   .seletor-on
     display block
 
@@ -91,6 +92,9 @@ export default {
     transform translateY(0)
   .slideDown
     transform translateY(100%)
+  .showUp-enter,
+  .showUp-enter-active
+    transform: translate3d(0, 100%, 0);
 
 </style>
 
