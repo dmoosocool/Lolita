@@ -16,6 +16,8 @@ import Loading from '@/example/loading';
 import Progress from '@/example/progress';
 import Step from '@/example/step';
 import Message from '@/example/message';
+import Actionsheet from '@/example/actionsheet';
+
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -80,6 +82,10 @@ export default new Router({
       path: '/message',
       name: 'Message',
       component: Message
+    }, {
+      path: '/Actionsheet',
+      name: 'Actionsheet',
+      component: Actionsheet
     }
   ]
 });

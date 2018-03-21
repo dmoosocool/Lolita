@@ -87,6 +87,10 @@ export default {
           {
             text: 'CheckBox - 复选框',
             path: 'checkBox'
+          },
+          {
+              text:'Actionsheet--底部弹出框',
+              path:'Actionsheet'
           }
         ]
       },
