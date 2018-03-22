@@ -13,27 +13,36 @@ export default {
   },
   methods:{
     updateCurrent:function(){
+      this.$children[this.$children.length-1].stepLine = false;
       if(this.current<0 || this.current>this.$children.length){
         return;
       }
       this.$children.forEach((child, index)=>{
         if(index<this.current){
           child.currentStatus = true;
-          index>0?this.$children[index-1].colors = true:'';
+          child.stepCircle = 'normal';
+          child.successOrfail = 'success';
+          index>0 ?this.$children[index-1].lineColors = 'normal':'';
           child.num = '';
         } else {
+          if(this.status == 'error' && this.current == index){
+            this.$children[index-1].lineColors = 'error';
+            child.successOrfail = 'fail';
+            child.num = '';
+            child.stepCircle = 'error';
+          } else {
+            child.lineColors = 'default';
+            child.num = index+1;
+            child.stepCircle = 'default';
+          }
           child.currentStatus = false;
-          child.colors = false;
-          child.num = index+1;
-        }
-        if(this.$children.length == index+1){
-          child.stepLine = false;
         }
       });
     }
   },
   props:{
-    current:[Number,String]
+    current:[Number,String],
+    status:String,
   },
   mounted:function(){
     this.updateCurrent();
