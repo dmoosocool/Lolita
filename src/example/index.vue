@@ -5,8 +5,16 @@
         <br/>
         <p class="words">{{ msg }}</p>
     </div>
-    <loli-accordion title="基础组件">
+    <loli-accordion title="基础组件" show>
       <template v-for="item in routers.base">
+        <loli-accordion-item :key="item.text">
+          <router-link :to="{ path: item.path}">{{item.text}}</router-link>
+        </loli-accordion-item>
+      </template>
+    </loli-accordion>
+
+    <loli-accordion title="表单">
+      <template v-for="item in routers.form">
         <loli-accordion-item :key="item.text">
           <router-link :to="{ path: item.path}">{{item.text}}</router-link>
         </loli-accordion-item>
@@ -27,19 +35,53 @@ export default {
             path: 'layout'
           },
           {
-            text: 'Button - 按钮',
-            path: 'button'
-          },
-          {
             text: 'Accordion - 手风琴',
             path: 'accordion'
+          },
+          {
+            text: 'Header - 头部',
+            path: 'Header'
+          },
+          {
+            text: 'Popup - 弹出框',
+            path: 'popup'
+          },
+          {
+            text: 'Loading - 加载',
+            path: 'loading'
+          },
+          {
+            text: 'Progress - 进度条',
+            path: 'progress'
+          },
+          {
+            text: 'Step - 步骤',
+            path: 'step'
+          },
+          {
+            text: 'Dialog - 对话框',
+            path: 'dialog'
+          },
+          {
+            text: 'Message - 消息框',
+            path: 'message'
+          }
+        ],
+        form: [
+          {
+            text: 'Button - 按钮',
+            path: 'button'
           },
           {
             text: 'Selection - checkBox',
             path: 'selection'
           },
           {
-            text: 'Radio - 单项选择',
+            text: 'Seletor - 选择器',
+            path: 'Seletor'
+          },
+          {
+            text: 'Radio - 单选框',
             path: 'radio'
           },
           {
@@ -64,9 +106,12 @@ export default {
             path:'step'
           },{
             text:'input--输入框',
-            path:'input'
+            path:'input'},
+          {
+            text:'Actionsheet--底部弹出框',
+            path:'Actionsheet'
           }
-        ],
+        ]
       },
       msg: 'Lolita 移动端 Vue 组件库',
     };
@@ -78,8 +123,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-#example a {
-  display: block;
+#example {
+  .loli-accordion-group {
+    margin-bottom: 10px;
+  }
+
+  a {
+    display: block;
+  }
 }
 
 .header {
