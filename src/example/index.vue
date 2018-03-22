@@ -95,20 +95,13 @@ export default {
           {
             text: 'popup - 弹出框',
             path: 'popup'
-          },{
-            text:'loading -加载',
-            path:'loading'
-          },{
-            text:'progress--进度条',
-            path:'progress'
-          },{
-            text:'step--步骤',
-            path:'step'
-          },{
-            text:'input--输入框',
-            path:'input'},
+          },
           {
-            text:'Actionsheet--底部弹出框',
+            text:'input - 输入框',
+            path:'input'
+          },
+          {
+            text:'Actionsheet - 底部弹出框',
             path:'Actionsheet'
           }
         ]
