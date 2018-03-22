@@ -47,7 +47,6 @@ export default {
             path: 'checkBox'
           },
           {
-          },{
             text: 'Header - 头部',
             path: 'Header'
           },
@@ -63,6 +62,9 @@ export default {
           },{
             text:'step--步骤',
             path:'step'
+          },{
+            text:'input--输入框',
+            path:'input'
           }
         ],
       },

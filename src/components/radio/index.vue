@@ -28,13 +28,12 @@ export default {
 
 <style scoped lang="stylus">
 .loli-radio-group
-  background-color #fff
   .loli-radio-group-title
     margin 0
     font-weight 400
     font-size 18px
     color #000
-    padding 20px 15px 0px 20px
+    padding 20px 15px 0px 0px
   .loli-radio-items
-    padding: 10px 20px
+    padding: 10px 0px
 </style>
