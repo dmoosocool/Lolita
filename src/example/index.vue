@@ -87,6 +87,22 @@ export default {
           {
             text: 'CheckBox - 复选框',
             path: 'checkBox'
+          },
+          {
+            text: 'Header - 头部',
+            path: 'Header'
+          },
+          {
+            text: 'popup - 弹出框',
+            path: 'popup'
+          },
+          {
+            text:'input - 输入框',
+            path:'input'
+          },
+          {
+            text:'Actionsheet - 底部弹出框',
+            path:'Actionsheet'
           }
         ]
       },
