@@ -62,6 +62,7 @@ export default new Router({
     name: 'Popup',
     component: Popup
   }, {
+  {
     path: '/loading',
     name: 'Loading',
     component: Loading
