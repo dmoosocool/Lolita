@@ -92,6 +92,7 @@ export default {
             path: 'checkBox'
           },
           {
+
             text: 'Header - 头部',
             path: 'Header'
           },
@@ -105,6 +106,7 @@ export default {
           },
           {
             text:'Actionsheet - 底部弹出框',
+
             path:'Actionsheet'
           }
         ]
