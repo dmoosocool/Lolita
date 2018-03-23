@@ -17,6 +17,7 @@ import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
+
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -69,30 +70,40 @@ export default new Router({
     path: '/loading',
     name: 'Loading',
     component: Loading
-  }, {
+  },
+  {
     path: '/progress',
     name: 'Progress',
     component: Progress
-  }, {
+  },
+  {
     path: '/step',
     name: 'Step',
     component: Step
-  }, {
+  },
+  {
     path: '/Seletor',
     name: 'Seletor',
     component: Seletor
-  }, {
+  },
+  {
     path: '/message',
     name: 'Message',
     component: Message
-  }, {
+  },
+  {
     path: '/Actionsheet',
     name: 'Actionsheet',
     component: Actionsheet
-  }, {
+  },
+  {
     path: '/input',
     name: 'Input',
     component: Input
-  }
-  ]
+  },
+  {
+    path: '/dialog',
+    name: 'Dialog',
+    component: Dialog
+  }]
 });

@@ -1,12 +1,38 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition
+      mode="out-in"
+      :duration="{enter: 100, leave: 100}"
+      :enter-active-class="enterActiveClass"
+      :leave-active-class="leaveActiveClass"
+    >
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
+//animated slideInLeft
+//animated slideOutRight
+import animate from 'animate.css';
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+      enterActiveClass: '',
+      leaveActiveClass: ''
+    };
+  },
+
+  watch: {
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length;
+      const fromDepth = from.path.split('/').length;
+      this.enterActiveClass = toDepth < fromDepth ? 'animated slideInLeft' : 'animated slideInRight';
+      this.leaveActiveClass = toDepth < fromDepth ? 'animated slideOutRight' : 'animated slideOutLeft';
+      console.log(this.enterActiveClass, this.leaveActiveClass);
+    }
+  }
 };
 </script>
 
@@ -14,7 +40,7 @@ export default {
 @import './components/baseStyles/index.styl';
 
 #example {
-  padding: 0 15px;
+  padding: 46px 15px 0 15px;
 }
 
 #example .demo-block-title {

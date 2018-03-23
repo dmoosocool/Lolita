@@ -1,23 +1,27 @@
 <template>
   <div id="headerExample">
     <div class="page-header-main">
-      <loli-header fixed msg="这是solt">
-      固定在顶部
-    </loli-header>
+      <loli-header fixed>
+        <span slot="title">固定在顶部</span>
+      </loli-header>
     </div>
-     <loli-header msg="这是solt">
-        标题过长会隐藏后面的内容啊哈哈哈哈
+
+    <loli-header>
+        <span slot="title">标题过长会隐藏后面的内容啊哈哈哈哈</span>
     </loli-header>
-     <loli-header msg="这是solt">
+
+    <loli-header >
       <div slot="left">恩</div>
-        左边有文案
+      <span slot="title">左边有文案</span>
     </loli-header>
-     <loli-header msg="这是solt">
+
+    <loli-header>
       <router-link to="/" slot="left">返回</router-link>
-        左边可点击
+      <span slot="title">左边可点击</span>
     </loli-header>
-    <loli-header msg="这是solt">
-        右边文案
+
+    <loli-header>
+      <span slot="title">右边文案</span>
       <div slot="right">哈</div>
     </loli-header>
   </div>

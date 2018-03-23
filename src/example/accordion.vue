@@ -1,5 +1,10 @@
 <template>
   <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">Accordion - 手风琴</span>
+    </loli-header>
+
     <div class="demo-block-title">
       <span>手风琴 - 基础用法</span>
     </div>
@@ -39,7 +44,7 @@
       <span>手风琴 - 默认展开</span>
     </div>
 
-    <loli-accordion title="基础组件" show=true>
+    <loli-accordion title="基础组件" show>
       <loli-accordion-item text="基础组件1"/>
       <loli-accordion-item text="基础组件2"/>
       <loli-accordion-item text="基础组件3"/>
