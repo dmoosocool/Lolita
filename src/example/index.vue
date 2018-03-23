@@ -65,7 +65,8 @@ export default {
           {
             text: 'Message - 消息框',
             path: 'message'
-          },{
+          },
+          {
             text:'collapse -折叠菜单',
             path:'collapse'
           }
@@ -97,16 +98,11 @@ export default {
             path: 'Header'
           },
           {
-            text: 'popup - 弹出框',
-            path: 'popup'
-          },
-          {
             text:'input - 输入框',
             path:'input'
           },
           {
             text:'Actionsheet - 底部弹出框',
-
             path:'Actionsheet'
           }
         ]

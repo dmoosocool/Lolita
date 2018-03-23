@@ -30,7 +30,6 @@ export default {
       const fromDepth = from.path.split('/').length;
       this.enterActiveClass = toDepth < fromDepth ? 'animated slideInLeft' : 'animated slideInRight';
       this.leaveActiveClass = toDepth < fromDepth ? 'animated slideOutRight' : 'animated slideOutLeft';
-      console.log(this.enterActiveClass, this.leaveActiveClass);
     }
   }
 };
