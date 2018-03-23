@@ -1,39 +1,40 @@
 
 <template>
-    <div class="loli-popup" :class="{disPopup:closePopup}">
-      <div v-if="position=='right'?true:false" class="position-right">
-        <slot></slot>
-      </div>
-       <div v-if="position=='normal'?true:false" class="content">
+   <transition name="fade">
+    <div class="loli-popup" v-if="show">
+       <div class="content">
            <div class="title"><b @click="closePupop"></b><h4>{{title}}</h4></div>
            <div>
                 <slot></slot>
            </div>
        </div>
    </div>
+   </transition>
 </template>
 <script>
 export default {
   name:'loli-popup',
   methods:{
     closePupop:function(){
-      this.$emit('update:change', true);
+      this.$emit('update:change', false);
     }
   },
   props:{
     title:String,
-    closePopup:{ //是否关闭
+    show:{ //是否关闭
       type:Boolean,
       default:true
-    },
-    position:{
-      type:String,
-      default:'normal'
     }
   }
 };
 </script>
 <style lang='stylus' scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 .disPopup
   display none 
 .loli-popup
@@ -42,7 +43,7 @@ export default {
   top 0 
   width 100% 
   height 100% 
-  background  rgba(0, 0, 0, 0.5)  
+  background  rgba(0, 0, 0, 0.5) 
   z-index 999
   .position-right
     position absolute 

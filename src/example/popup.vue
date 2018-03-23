@@ -1,11 +1,9 @@
 <template>
   <div>
     <loli-row>
-      <loli-col :span=10 :offset=2><loli-button type="default" tag="button" size="large" @click="close">弹出组件</loli-button></loli-col>
-      <loli-col :span=10 :offset=2><loli-button type="default" tag="button" size="large" @click="positionRight">从右边弹出</loli-button></loli-col>
-    </loli-row>
+      <loli-col :span=10 :offset=4><loli-button type="default" tag="button" size="large" @click="close">弹出组件</loli-button></loli-col></loli-row>
     
-    <loli-popup title="这是标题内容" :closePopup="closePopup1" :change.sync="closePopup1">
+    <loli-popup title="这是标题内容" :show="show" :change.sync="show">
       <!--要插入的内容-->
       <div class="pupContent">
         <div v-for="(item,index) in bankList" :key="index">
@@ -15,16 +13,6 @@
       </div>
       <!--要插入的内容-->
     </loli-popup>
-      
-    <transition name="fade">
-      <div class="popupRight">
-        <loli-popup position="right" v-show="true" :closePopup="closePopup2" :change.sync="closePopup2">
-          <!--要插入的内容-->
-          <loli-button type="default" tag="button" size="large" @click="positionRight">关闭弹窗</loli-button>
-          <!--要插入的内容-->
-        </loli-popup>
-    </div>
-    </transition>
   </div>
 </template>
 
@@ -34,7 +22,7 @@ export default {
   data(){
     return{
       title:'这是标题的内容还',
-      closePopup1:true,
+      show:false,
       closePopup2:true,
       bankList:[{
         url:require('../assets/bank_list.png'),
@@ -65,7 +53,7 @@ export default {
   }, 
   methods:{
     close:function(){
-      this.closePopup1 = !this.closePopup1;
+      this.show = !this.show;
     },
     positionRight:function(){
       this.closePopup2 = !this.closePopup2;

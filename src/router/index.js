@@ -17,6 +17,7 @@ import Progress from '@/example/progress';
 import Step from '@/example/step';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
+import Collapse from '@/example/collapse';
 
 Vue.use(Router);
 export default new Router({
@@ -85,5 +86,9 @@ export default new Router({
     path: '/Actionsheet',
     name: 'Actionsheet',
     component: Actionsheet
+  }, {
+    path: '/collapse',
+    name: 'Collapse',
+    component: Collapse
   }]
 });

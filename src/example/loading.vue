@@ -11,7 +11,7 @@ export default {
   name:'example-loading', 
   data(){
     return{
-      loaderShow1:true,
+      loaderShow1:false,
       loaderShow2:true
     };
   },

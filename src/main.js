@@ -22,7 +22,9 @@ import Loading from '@/components/loading';
 import Progress from '@/components/progress';
 import Message from '@/components/message';
 import Actionsheet from '@/components/actionsheet/index';
-import Steps from '@/components/steps/index';
+import Steps from '@/components/steps';
+import Collapse from '@/components/collapse';
+
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -43,6 +45,10 @@ Vue.component('loli-message', Message);
 Vue.component('loli-actionsheet', Actionsheet);
 Vue.component('loli-steps', Steps);
 Vue.component('loli-step', Steps.step);
+Vue.component('loli-collapse', Collapse);
+Vue.component('loli-panel', Collapse.Panel);
+
+
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 
