@@ -1,77 +1,101 @@
 <template>
 <div id="outerBox">
-  <div class="lolita-seletro-group">
-    <h2 class="seletor-group-title">学历</h2>
-    <div
-      data-type='0'
-      :class="['seletor-group-content',domViewData.name!=''?'':'placeholder']"
-      :data-id="domViewData.code"
-      @click="tapSeletor"
-    >
-      {{domViewData.name!='' ? domViewData.name:'请选择您的'+options.title}}
-    </div>
-    <Actionsheet
+     <Actionsheet
       :options="options"
       @comform="comformSure"
     />
-    <Lolimask
-      :isMaskShow="options.lvalue"
-      :closeOnClickMask="options.closeOnClickMask"
-      @clickMask="onClickMask"/>
+
+  <div class="lolita-seletro-group">
+    <h2 class="seletor-group-title">学历</h2>
+    <div
+      data-title = '学历'
+      data-type='0'
+      :class="['seletor-group-content',viewData.edu.value!=''?'':'placeholder']"
+      :data-id="viewData.edu.code"
+      @click="tapSeletor"
+    >
+      {{viewData.edu.value!='' ? viewData.edu.value:'请选择您的学历'}}
+    </div>
   </div>
+
+  <div class="lolita-seletro-group">
+    <h2 class="seletor-group-title">地址</h2>
+    <div
+      data-title = '地址'
+      data-type='1'
+      :class="['seletor-group-content',viewData.addr.length!=0?'':'placeholder']"
+      :data-id="viewData.addr.code"
+      @click="tapSeletor"
+    >
+      {{address!=''?address:'请选择您的地址'}}
+    </div>
+  </div>
+
 </div>
 </template>
 <script>
 import Actionsheet from '../components/actionsheet/index.vue';
-import Lolimask from '../components/actionsheet/mask.vue';
 import DIC from  './DICdata.json';//字典数据
-console.log(DIC);
 export default {
   data(){
     return {
-      domViewData:{
-        code:'',
-        name:'',
+      viewData:{//页面展数据内容
+        edu:{//学历
+          code:'',
+          value:''
+        },
+        addr:[],
       },
-      options:{
-        title:'学历',
+      options:{//组件参数
+        title:'',
         type:'',//类型:单级选择，1:多级联动
         lvalue:false,//是否唤起组件,默认false隐藏
         closeOnClickMask:true,//点击遮罩层是否关闭组件
-        selectData:{
-          code:'',
-          name:''
-        },
+        xAxis:['省','市','区'],
         data:'',
       }
     };
   },
   components:{
     Actionsheet,
-    Lolimask
   },
   methods:{
     tapSeletor(e){
       const type = e.target.dataset.type;
       this.options.type = type;
+      this.options.title = e.target.dataset.title;
       this.options.data = DIC['type_'+type];
       this.options.lvalue = true;
     },
-    comformSure(){
-      if(this.options.selectData.code ==''|| this.options.selectData.name =='') {
-        alert('请选择一项');
+    comformSure(res){
+      if(res.type==0){
+        switch(res.name){
+        case '学历':
+          this.viewData.edu=res;
+          break;
+        default:
+          break;
+        }
       }else {
-        this.domViewData.name = this.options.selectData.name;
-        this.domViewData.code = this.options.selectData.code;
-        this.options.lvalue = false;
+        this.viewData.addr=res.resData;
+        console.log(this.viewData.addr);
       }
+      this.options.lvalue = false;
     },
     onClickMask(){
       this.options.closeOnClickMask&&( this.options.lvalue = false);
     }
 
   },
-  computed:{}
+  computed:{
+    address(){
+      let addrTxt = '';
+      for(let i=0;i< this.viewData.addr.length;i++){
+        addrTxt +=this.viewData.addr[i].value;
+      }
+      return addrTxt;
+    }
+  }
 };
 </script>
 <style lang="stylus" scoped>
@@ -79,6 +103,7 @@ export default {
   margin-top 40px
 .lolita-seletro-group
   padding 0 15px
+  margin-bottom 30px
 .seletor-group-title
   font-size 15px
   opacity .3

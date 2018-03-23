@@ -65,6 +65,9 @@ export default {
           {
             text: 'Message - 消息框',
             path: 'message'
+          },{
+            text:'collapse -折叠菜单',
+            path:'collapse'
           }
         ],
         form: [
@@ -89,6 +92,7 @@ export default {
             path: 'checkBox'
           },
           {
+
             text: 'Header - 头部',
             path: 'Header'
           },
@@ -102,6 +106,7 @@ export default {
           },
           {
             text:'Actionsheet - 底部弹出框',
+
             path:'Actionsheet'
           }
         ]

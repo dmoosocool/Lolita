@@ -17,6 +17,7 @@ import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
+import Collapse from '@/example/collapse';
 
 Vue.use(Router);
 export default new Router({
@@ -32,7 +33,12 @@ export default new Router({
     component: Button
   },
   {
-    path: '/Header',
+    path: '/dialog',
+    name: 'Dialog',
+    component: Dialog
+  },
+  {
+    path: '/header',
     name: 'Header',
     component: Header
   },
@@ -95,6 +101,11 @@ export default new Router({
     path: '/Actionsheet',
     name: 'Actionsheet',
     component: Actionsheet
+  },
+  {
+    path: '/collapse',
+    name: 'Collapse',
+    component: Collapse
   },
   {
     path: '/input',

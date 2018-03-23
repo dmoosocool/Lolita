@@ -1,10 +1,11 @@
 <template>
-   <div class="loli-step-inside">
-      <div class="loli-step-left">
-        <div v-if="stepLine" class="loli-step-line" :class="'loli-step-line-'+[colors ? 'normal' : 'color']"></div>
-        <div class="step-icon" :class="'step-icon-'+[currentStatus ? 'show' : 'hide']" ><i :class="{'sucess':currentStatus}">{{num}}</i></div>
-      </div>
-      <div class="loli-step-right">{{title}}</div>
+   <div class="loli-steps">
+     <div class="loli-step-line"><i v-if="stepLine" :class="['loli-step-line-'+lineColors]"></i></div>
+     <div class="loli-step-circle" :class="['loli-step-circle-'+stepCircle]"><span :class="[successOrfail]">{{num}}</span></div>
+     <div class="loli-step-title">
+        <h4>{{title}}</h4>
+        <div class="loli-step-content">{{description}}</div>
+     </div>
    </div>
 </template>
 <script>
@@ -15,65 +16,81 @@ export default {
       num:1,
       currentStatus:false,
       stepLine:true,
-      colors:false
+      lineColors:'default',
+      stepCircle:'default',
+      successOrfail:''
     };
   },
   props:{
     title:String,
-    // colors:{
-    //   type:String,
-    //   default:'color'
-    // },
+    description:String
   },
 };
 </script>
 <style lang="stylus" scoped>
-.loli-step-inside
-  width 100%
+.loli-steps
+  position relative
+  width 360px
+  height 80px
   display flex
-  .loli-step-left
-    width 8%
-    height 100%
-    display flex
-    justify-content center
-    align-items center
+  .loli-step-line
     position relative
-    .loli-step-line
-      width 2px
-      height 140px
-      &-color 
-        background-color #c0c4cc
-      &-normal
-        background-color #0469c8
-    .step-icon
-      position absolute
-      height 24px
-      width 24px
-      border-width 1px
-      border-style solid 
-      border-radius 50%
-      left 1px
-      top 0
-      background #fff
-      z-index 99
-      &-show
-        border-color #0469c8
-      &-hide 
-        border-color #dcdfe6
-      i 
-        position absolute
-        left 50%
-        top 50%
-        transform translate(-50%,-50%) 
-        width 14px
-        height 14px
-        font-style normal
-        text-align center
-        font-size 16px
-        opacity .7
-      .sucess
-        background url('../../assets/icon_success.png') no-repeat center 
-  .loli-step-right
-    font-size 16px
-    padding 6px 4px
+    width 26px
+    height 100%
+    &-default 
+      background-color #c0c4cc
+    &-normal
+      background-color #0469c8
+    &-error
+      background-color #ff3300
+    i 
+      position absolute 
+      left 50%
+      bottom 2px
+      transform translateX(-50%)
+      width 1px
+      height 50px
+  .loli-step-circle
+    position absolute
+    left 0
+    top 0
+    width 26px
+    height 26px
+    border-radius 50%
+    border-width 1px
+    border-style solid 
+    &-default 
+      border-color #c0c4cc
+    &-normal
+      border-color #0469c8
+    &-error
+      border-color #ff3300
+    span 
+      width 10px
+      height 24px 
+      position absolute 
+      left 50%
+      top 50% 
+      line-height 24px
+      transform translate(-50%,-50%)
+      text-align center 
+      color #ccc
+    .success
+      background url('../../assets/icon_success.png') no-repeat center
+      background-size 120%
+    .fail
+      background url('../../assets/icon_close.png') no-repeat center
+      background-size 120%
+  .loli-step-title
+    width 300px
+    padding 4px 12px
+    box-sizing border-box
+    h4 
+      font-size 15px
+      overflow hidden 
+      text-overflow ellipsis 
+      white-space nowrap 
+    .loli-step-content
+      color #333
+      padding-top 4px
 </style>

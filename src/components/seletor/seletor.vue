@@ -1,7 +1,9 @@
 <template>
 
-  <div :class="['seletor-box',dataList.isShowSeletor?'seletor-on':'seletor-off']">
-    <div class="mask"></div>
+  <div :class="['seletor-box']" v-if='dataList.isShowSeletor'>
+    <transition name="fade">
+      <div class="mask"></div>
+    </transition>
     <transition name="showUp">
       <div :class="['seletor-main',dataList.isShowSeletorMain?'slideUp':'slideDown']">
         <Seletornav :title="dataList.title" @closeBtn="closeSeletor" @comformBtn="comformSeletor"/>
@@ -14,7 +16,6 @@
 <script>
 import Seletornav from './seletorNav.vue';
 import Seletoritem from './seletorItems.vue';
-
 export default {
   props:{
     dataList:{
@@ -55,6 +56,13 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: 2.2s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
   .seletor-box
     position: absolute;
     width: 100%;
@@ -82,7 +90,7 @@ export default {
     height: 100%
     background: rgba(0,0,0,.7)
     z-index: 100
-    transition background .2s easy-out
+    transition 1.2s easy-out
   .seletor-on
     display block
 

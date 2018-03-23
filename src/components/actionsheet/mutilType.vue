@@ -1,0 +1,163 @@
+<template>
+  <div class="loli-mulitil-container">
+    <div class="loli-tabs">
+      <span
+      v-for="(ax,idx) in options.xAxis"
+      :key="idx"
+      :class="[idx!=options.xAxis.length-1?(tabsList[idx].val?'':tabsList[idx].flag?'tabs-active':'tabs-off'):(tabsList[idx].flag?'tabs-active':'tabs-off')]"
+      @click="navTabsEvent" :data-lv='idx'
+      >
+        {{titleTabViewTxt(idx)}}
+      </span>
+    </div>
+    <div class="loli-multil-items">
+      <span
+      v-for="item in items.data"
+      :key = item.code
+      :data-val="item.name"
+      :data-id="item.code"
+      :data-lv="items.lv"
+      @click="itemsTabEvent"
+      >{{item.name}}</span>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data(){
+    return {
+      tabsList:[{//用户记录tabs 选项的激活或选中状态
+        flag:1,//0|1,val=''&&flag=1时激活状态active；val=''&&flag=0,隐藏状态；val=!'',显示单没active状态
+        val:''
+      }]
+    };
+  },
+  props:{
+    options:{
+      type:Object,
+      require:true
+    },
+    items:{
+      type:Object
+    },
+    result:{
+      type:Object
+    },
+
+  },
+  beforeMount(){//beforeMount 挂载开始之前被调用，轮询有多少层（最多四层）
+    for(var i=1;i<this.options.xAxis.length;i++){
+      this.tabsList.push({flag:0,val:''});
+    }
+  },
+  methods:{
+    navTabsEvent(e){
+      const tg = e.target;
+      const lv = tg.dataset.lv*1;
+      this.tabsList[lv].flag=1;
+      this.tabsList[lv].val = '';
+      for(var i=0;i<this.tabsList.length;i++){
+        if(i>lv){//点标题时，后面层级的标题隐藏
+          this.tabsList[i].val = '';
+          this.tabsList[i].flag = 0;
+        }
+      }
+      this.currentSeletItems();
+      this.$emit('navTab',lv);
+    },
+    itemsTabEvent(e){
+      const tg = e.target;
+      const idx = tg.dataset.lv*1;
+      this.tabsList[idx].val=tg.innerText;
+      this.tabsList[idx].code=tg.dataset.id;
+      if(idx==this.tabsList.length-1){//最后一项不用替换标题
+        const siblings = tg.parentNode.childNodes;
+        for(let i=0;i<siblings.length;i++){//相邻兄弟元素去掉选中状态
+          if(siblings[i].nodeName=='SPAN'){
+            siblings[i].className = '';
+          }
+        }
+        tg.className='items-active';//
+
+      }else {
+        this.tabsList[idx+1].flag=1;//头部的下一个tab按钮激活状态
+      }
+      this.currentSeletItems();
+      this.$emit('itemtab',{lv:idx,el:e});
+    },
+    titleTabViewTxt(i){//computed方式 不能传递参数，用methods
+      let txt = this.options.xAxis[i];
+      i<this.tabsList.length-1 && this.tabsList[i].val!=''&& (txt = this.tabsList[i].val);
+      return txt;
+    },
+    currentSeletItems(){//没操作一次都计算已选项的结果
+      this.result.name = this.options.title;
+      this.result.resData = [];
+      for(let i=0;i<this.tabsList.length;i++){
+        if(this.tabsList[i].val!=''){
+          this.result.resData.push({
+            value:this.tabsList[i].val,
+            code:this.tabsList[i].code
+          });
+        }else {//只要有没值 停止后面的遍历
+          continue;
+        }
+      }
+    },
+  },
+  computed:{
+  }
+};
+</script>
+<style lang="stylus" scoped>
+.loli-tabs
+  padding-left: 5%
+  height: 31px
+  border-bottom: 1px solid #EBF0F4
+  & span
+    font-size: 15px
+    height: 31px
+    display: inline-block
+    font-weight: bold
+    &:not(:last-child)
+      margin-right: 10px
+    &.tabs-active
+      border-bottom: 2px solid #F69433
+      color: #0469c8
+    &.tabs-off
+      display none
+.loli-multil-items
+  height: 220px
+  overflow-y: scroll
+  font-size: 15px
+  -webkit-overflow-scrolling: touch
+  padding-bottom: 40px
+  & span
+    padding: 0 5%
+    display: block
+    height: 38px
+    line-height: 38px
+    position: relative
+    &.items-active
+      color: #0469c8
+      background-color: #E2EDF6
+      &:after
+        display: block
+        content: ''
+        box-sizing: border-box
+        width: 6px
+        height: 12px
+        border-color: #0469c8
+        -webkit-transform: rotate(45deg)
+        transform: rotate(45deg)
+        border-width: 2px
+        border-style: solid
+        border-top: 0
+        border-left: 0
+        position: absolute
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 5%;
+</style>
+
