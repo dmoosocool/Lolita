@@ -20,12 +20,12 @@ import CheckBoxItem from '@/components/checkBox/item';
 import Popup from '@/components/popup';
 import Loading from '@/components/loading';
 import Progress from '@/components/progress';
-import Steps from '@/components/steps';
-import Step from '@/components/steps/step';
 import Input from '@/components/input';
-
 import Message from '@/components/message';
 import Actionsheet from '@/components/actionsheet/index';
+import Steps from '@/components/steps';
+import Collapse from '@/components/collapse';
+
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -42,11 +42,15 @@ Vue.component('loli-checkbox-item', CheckBoxItem);
 Vue.component('loli-popup', Popup);
 Vue.component('loli-loading', Loading);
 Vue.component('loli-progress', Progress);
-Vue.component('loli-steps', Steps);
-Vue.component('loli-step', Step);
 Vue.component('loli-input', Input);
 Vue.component('loli-message', Message);
 Vue.component('loli-actionsheet', Actionsheet);
+Vue.component('loli-steps', Steps);
+Vue.component('loli-step', Steps.step);
+Vue.component('loli-collapse', Collapse);
+Vue.component('loli-panel', Collapse.Panel);
+
+
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 

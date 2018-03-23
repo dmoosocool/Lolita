@@ -65,6 +65,9 @@ export default {
           {
             text: 'Message - 消息框',
             path: 'message'
+          },{
+            text:'collapse -折叠菜单',
+            path:'collapse'
           }
         ],
         form: [

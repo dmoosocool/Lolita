@@ -17,6 +17,7 @@ import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
+import Collapse from '@/example/collapse';
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -24,52 +25,43 @@ export default new Router({
     path: '/',
     name: 'Index',
     component: Index
-  },
-  {
+  }, {
     path: '/button',
     name: 'Button',
     component: Button
-  },
-  {
-    path: '/Header',
+  }, {
+    path: '/dialog',
+    name: 'Dialog',
+    component: Dialog
+  }, {
+    path: '/header',
     name: 'Header',
     component: Header
-  },
-  {
+  }, {
     path: '/layout',
     name: 'Layout',
     component: Layout
-  },
-  {
+  }, {
     path: '/accordion',
     name: 'Accordion',
     component: Accordion
-  },
-  {
+  }, {
     path: '/selection',
     name: 'Selection',
     component: Selection
-  },
-  {
+  }, {
     path: '/radio',
     name: 'Radio',
     component: Radio
-  },
-  {
+  }, {
     path: '/checkBox',
     name: 'CheckBox',
     component: CheckBox
-  },
-  {
+  }, {
     path: '/popup',
     name: 'Popup',
     component: Popup
-  },
-  {
-    path:'/dialog',
-    name:'Dialog',
-    component:Dialog
-  },
+  }, {
   {
     path: '/loading',
     name: 'Loading',
@@ -95,6 +87,10 @@ export default new Router({
     name: 'Actionsheet',
     component: Actionsheet
   }, {
+    path: '/collapse',
+    name: 'Collapse',
+    component: Collapse
+  }]
     path: '/input',
     name: 'Input',
     component: Input

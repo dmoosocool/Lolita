@@ -1,33 +1,22 @@
 <template>
-  <div class="step">
-    <div class="title">这是step页面</div>
-    <loli-steps :current="active">
+    <div class="step">
+      <div class="title">默认steps</div>
+      <loli-steps current="2">
+          <loli-step title="步骤一" description="这里是描述信息"></loli-step>
+          <loli-step title="步骤一" description="这里是描述信息"></loli-step>
+          <loli-step title="步骤一" description="这里是描述信息"></loli-step>
+      </loli-steps>
+      <div class="title">带错误提示的steps</div>
+      <loli-steps current="1" status="error">
         <loli-step title="步骤一"></loli-step>
-        <loli-step title="步骤一"></loli-step>
-        <loli-step title="步骤一"></loli-step>
-        <loli-step title="步骤一"></loli-step>
-    </loli-steps>
-    <loli-button type="default" tag="button" size="large" @click="nextStep">下一步</loli-button>
-  </div>
+        <loli-step title="该步骤失败了"></loli-step>
+        <loli-step title="待进行"></loli-step>
+      </loli-steps>
+    </div>
 </template>
 <script>
 export default {
   name:'example-step',
-  data(){
-    return{
-      active:1
-    };
-  },
-  methods:{
-    nextStep:function(){
-      console.log(22);
-      if (this.active == 4) {
-        this.active = 0;
-      } else {
-        this.active += 1;
-      }
-    }
-  }
 };
 </script>
 <style lang="stylus" scoped> 
