@@ -1,41 +1,59 @@
 <template>
    <div class='loli-checkbox-group'>
-    <h2 class="loli-checkbox-group-title">{{customizeTitle}}</h2>
-    <div class="loli-checkbox-items" >
-      <slot name="checkBoxItems"></slot>
-    </div>
-   </div>
+      <slot></slot>
+  </div>
+ 
 </template>
   
 <script>
-  
+
 export default {
   name:'loli-checkBox-group',
   props:{
-    customizeTitle:String
+    value: {
+      type: Array,
+      default () {
+        return [];
+      }
+    },
   },
   data() {
     return {
+      currentValue:this.value,
+      childrens:[]
     };
   },
-  created() {
-      
+  mounted(){
+    this.updateModel(true);
   },
   methods: {
-      
+    updateModel(update){
+      if(this.$children){
+        const {value} = this;
+        this.$children.forEach(child=>{
+          child.model = value;
+          if(update){
+            child.currentValue = value.indexOf(child.label) >= 0;
+            child.group = true;
+          }
+        });
+      }
+    },
+    change (data) {
+      this.currentValue = data;
+      this.$emit('input', data);
+      this.$emit('on-change', data);
+    },
+   
+  },
+  watch: {
+    value () {
+      this.updateModel(true);
+    }
   }
 };
 </script>
 
 <style scoped lang="stylus">
-  .loli-checkbox-group
-    background-color #fff
-    .loli-checkbox-group-title
-      margin 0
-      font-weight 400
-      font-size 18px
-      color #000
-      padding 20px 15px 0px 20px
-    .loli-checkbox-items
-      padding: 10px 20px
+  
 </style>

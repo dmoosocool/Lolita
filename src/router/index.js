@@ -8,17 +8,16 @@ import Accordion from '@/example/accordion';
 import Selection from '@/example/selection';
 import Radio from '@/example/radio';
 import CheckBox from '@/example/checkBox';
-
 import Layout from '@/example/layout';
 import Dialog from '@/example/dialog';
 import Popup from '@/example/popup';
 import Loading from '@/example/loading';
 import Progress from '@/example/progress';
 import Step from '@/example/step';
+import Input from '@/example/input';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
 import Collapse from '@/example/collapse';
-
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -91,4 +90,9 @@ export default new Router({
     name: 'Collapse',
     component: Collapse
   }]
+    path: '/input',
+    name: 'Input',
+    component: Input
+  }
+  ]
 });

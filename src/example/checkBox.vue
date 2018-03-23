@@ -1,23 +1,41 @@
 <template>
    <div id='example'>
-    <div class="demo-block-title">
-      <span>checkBox - 基础用法</span>
-    </div>
-    <div class="container">
-      <loli-checkbox-item customizeText="复选框1"  customizeValue="value1" ></loli-checkbox-item>
-      <loli-checkbox-item customizeText="复选框2"  customizeValue="value2" ></loli-checkbox-item>
+      <div class="demo-block-title">
+        <span>checkBox - 基础用法</span>
+      </div>
+      <div class="container">
+        <loli-checkbox-item v-model="single" label="复选框基础用法" @on-change="test"></loli-checkbox-item>
+        <span class="tipColor">{{checkSatus}}</span>
+      </div>
+
+      <div class="demo-block-title">
+        <span>checkBox - 默认选中</span>
+      </div>
+      <div class="container">
+        <loli-checkbox-item v-model="defaultChecked" label="复选框默认选中状态"></loli-checkbox-item>
+      </div>
+
+      <div class="demo-block-title">
+        <span>checkBox - 禁用状态</span>
+      </div>
+      <div class="container">
+        <loli-checkbox-item v-model="disabledSingle" isdisabled label="复选框禁用状态"></loli-checkbox-item>
+      </div>
+      
+      <div class="demo-block-title">
+        <span>checkBox - 复选框组</span>
+      </div>
+      <div class="container">
+        <loli-checkbox v-model="checkedResult">
+          <loli-checkbox-item  id="1" label="复选框1"></loli-checkbox-item>
+          <loli-checkbox-item  id="2" label="复选框2"></loli-checkbox-item>
+          <loli-checkbox-item  id="3" label="复选框3"></loli-checkbox-item>
+          <loli-checkbox-item  id="4" label="复选框4"></loli-checkbox-item>
+        </loli-checkbox>
+        <span class="tipColor">选择项为===>{{checkedResult}}</span>
+      </div>
     </div>
 
-    <div class="demo-block-title">
-      <span>checkBox - 复选框组</span>
-    </div>
-    <loli-checkbox :customizeTitle="title">
-      <template v-for="item in customizeTextArray" slot="checkBoxItems">
-        <loli-checkbox-item :customizeText="item.text" :key="item.text" :customizeValue="item.value" @click="chooseValue(item.value)"></loli-checkbox-item>
-      </template>
-    </loli-checkbox>
-   </div>
-  
 </template>
   
 <script>
@@ -25,32 +43,16 @@
 export default {
   data() {
     return {
-      title:'复选框基础用法',
-      customizeTextArray:[
-        {
-          text:'复选框1',
-          value:'value1'
-        },
-        {
-          text:'复选框2',
-          value:'value2'
-        },
-        {
-          text:'复选框3',
-          value:'value3'
-        },
-        {
-          text:'复选框4',
-          value:'value4'
-        }]
+      single:false,
+      checkSatus:'',
+      defaultChecked:true,
+      disabledSingle:false,
+      checkedResult:[]
     };
   },
-  created() {
-      
-  },
   methods: {
-    chooseValue(text){
-      console.log(text);
+    test(data){
+      this.checkSatus = data;
     }
   }
 };
@@ -60,4 +62,7 @@ export default {
 .container
   background-color #fff
   padding 10px 20px
+.tipColor
+  color red
+  font-size 16px
 </style>
