@@ -7,7 +7,7 @@
       <transition name="loli-actionsheet-slide">
       <div class="loli-actionsheet"  v-if = options.lvalue>
         <div class="loli-actionsheet-nav">
-          <span class="loli-actionsheet-close" @click="closeActionsheet"><i></i></span>
+          <span class="loli-actionsheet-close" @click="closeActionsheet"><i class="icon anticon icon-close"></i></span>
           <span class="loli-actionsheet-comform" @click="comformActionsheet">确定</span>
           <div class="loli-actionsheet-title">请选择</div>
         </div>
@@ -173,8 +173,9 @@ export default {
       width 12px
       height 12px
       margin 9px 0 0 9px
-      background url(../../assets/xIcon.png) center center
-      background-size 100%
+      font-size 20px
+      //background url(../../assets/xIcon.png) center center
+      //background-size 100%
   &-comform
     top: 3px
     right: 0

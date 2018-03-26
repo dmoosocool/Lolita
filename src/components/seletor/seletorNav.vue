@@ -1,6 +1,6 @@
 <template>
   <div class="seletor-nav">
-    <span class="sel-clostBtn" @click="seletorClose"><i></i></span>
+    <span class="sel-clostBtn" @click="seletorClose"><i class="icon anticon icon-close"></i></span>
     <span class="sel-comform" @click="seletorComform">确定</span>
     <div class="sel-title">请选择{{title}}</div>
   </div>
@@ -44,8 +44,9 @@ export default {
         width 12px
         height 12px
         margin 9px 0 0 9px
-        background url(../../assets/xIcon.png) center center
-        background-size 100%
+        font-size 20px
+        // background url(../../assets/xIcon.png) center center
+        // background-size 100%
   .sel-comform
     top: 3px
     right: 0
