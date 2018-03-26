@@ -21,13 +21,13 @@ export default {
         if(index<this.current){
           child.currentStatus = true;
           child.stepCircle = 'normal';
-          child.successOrfail = 'success';
+          child.successOrfail = true;
           index>0 ?this.$children[index-1].lineColors = 'normal':'';
           child.num = '';
         } else {
           if(this.status == 'error' && this.current == index){
             this.$children[index-1].lineColors = 'error';
-            child.successOrfail = 'fail';
+            child.successOrfail = false;
             child.num = '';
             child.stepCircle = 'error';
           } else {

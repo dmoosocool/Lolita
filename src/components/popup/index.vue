@@ -3,7 +3,7 @@
    <transition name="fade">
     <div class="loli-popup" v-if="show">
        <div class="content">
-           <div class="title"><b @click="closePupop"></b><h4>{{title}}</h4></div>
+           <div class="title"><span @click="closePupop" class="icon anticon icon-close"></span><h4>{{title}}</h4></div>
            <div>
                 <slot></slot>
            </div>
@@ -67,7 +67,7 @@ export default {
       font-size 20px 
       text-align center 
       height 80px 
-      line-height 100px 
+      
       display relative 
       h4 
         max-width 220px 
@@ -75,14 +75,15 @@ export default {
         overflow hidden 
         text-overflow ellipsis 
         white-space nowrap 
-      b
+        line-height 80px
+      span
         position absolute 
         left 30px 
-        top 30px 
-        width 30px 
-        height 30px 
-        background url('../../assets/close.png') no-repeat center 
-        background-size:cover
+        top 20px
+        width 30px
+        height 30px
+        font-size 24px
+        color #666
 </style>
 
 
