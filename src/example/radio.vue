@@ -2,32 +2,32 @@
   <div id="example">
     <loli-header fixed>
       <router-link :to="{path: '/'}" slot="left">返回</router-link>
-      <span slot="title">Radio - 单选框</span>
+      <span slot="title">Radio - 单选按钮</span>
     </loli-header>
 
     <div class="demo-block-title">
       <span>radio - 基础用法</span>
     </div>
     <div class="container">
-      <loli-radio-item label="value1" customizeValue="value1" customizeText="单选基础用法1" customizeName="1"></loli-radio-item>
-      <loli-radio-item label="value2" customizeValue="value2" customizeText="单选基础用法2" customizeName="1"></loli-radio-item>
+      <loli-radio-item v-model="radio" label="默认选中" name="1"></loli-radio-item>
+      <loli-radio-item label="value2" name="1"></loli-radio-item>
     </div>
 
     <div class="demo-block-title">
       <span>radio - 禁用状态</span>
     </div>
     <div class="container">
-      <loli-radio-item isdisabled label="value1" customizeValue="value1" customizeText="单选基础用法1" customizeName="1"></loli-radio-item>
-      <loli-radio-item isdisabled label="value2" customizeValue="value2" customizeText="单选基础用法2" customizeName="1"></loli-radio-item>
+      <loli-radio-item isdisabled label="禁用1" name="2"></loli-radio-item>
+      <loli-radio-item isdisabled label="禁用2" name="3"></loli-radio-item>
     </div>
 
     <div class="demo-block-title">
       <span>radio - 单选组</span>
     </div>
     <div class="container">
-      <loli-radio :customizeTitle="title">
+      <loli-radio customizeTitle="单项选择基础用法">
         <template v-for="item in customizeTextArray" slot="radioItems">
-          <loli-radio-item customizeName="2" :customizeText="item.text" :customizeValue="item.value"  v-on:getValue="inputValue" :key="item.text"></loli-radio-item>
+          <loli-radio-item name="3" :id="item.index" :label="item.value" v-on:getValue="inputValue" :key="item.index"></loli-radio-item>
         </template>
       </loli-radio>
       <span class="tipColor">选择项为===>{{picked}}</span>
@@ -40,25 +40,25 @@ export default {
   name: 'example-radio',
   data(){
     return{
-      title:'单项选择基础用法',
       picked:'',
       isdisabled:true,
+      radio:'默认选中',
       customizeTextArray:[
         {
-          text:'单项选择1',
-          value:'value1'
+          value:'value1',
+          index:1
         },
         {
-          text:'单项选择2',
-          value:'value2'
+          value:'value2',
+          index:2
         },
         {
-          text:'单项选择3',
-          value:'value3'
+          value:'value3',
+          index:3
         },
         {
-          text:'单项选择4',
-          value:'value4'
+          value:'value4',
+          index:4
         }]
     };
   },

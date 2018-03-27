@@ -20,8 +20,7 @@
       <div class="demo-block-title">
         <span>input输入框 - 禁用状态</span>
       </div>
-      <loli-input isDisabled placeholder="警用状态"></loli-input>
-
+      <loli-input isDisabled placeholder="禁用状态"></loli-input>
       <div class="demo-block-title">
             <span>input输入框 - 可删除</span>
           </div>

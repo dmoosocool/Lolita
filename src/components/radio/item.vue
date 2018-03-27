@@ -1,33 +1,24 @@
 <template>
    <div class="loli-radio-eachitem">
       <input 
-        v-if="isdisabled" 
         type="radio"
-        :disabled="isdisabled" 
-        :value="customizeValue" 
-        :name="customizeName"
-        ref="input1" 
+        ref="input" 
+        :disabled="isdisabled"
+        :checked="currentValue"
+        :value="label" 
+        :name="groupName"
+        :data-id="id"
+        class="loli-radio-input"
+        :class="{isdisabled:isdisabled}"
         @click="onClick" 
-        v-model="picked" 
-        class="loli-radio-input isdisabled" 
       >
-      <input 
-        v-else 
-        type="radio"
-        :value="customizeValue" 
-        :name="customizeName" 
-        ref="input1" 
-        @click="onClick" 
-        v-model="picked" 
-        class="loli-radio-input" 
-       >
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-radio"></use>
       </svg>
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-radioactive"></use>
       </svg>
-      <label :for="customizeValue" class="loli-radio-label">{{customizeText}}</label>
+      <label :for="label" class="loli-radio-label">{{label}}</label>
     </div>
 </template>
 
@@ -37,24 +28,30 @@ export default {
   name: 'loli-radio-item',
   props: {
     customizeText: String,
-    customizeValue:String,
-    customizeName:{
-      type:String
-    },
     isdisabled:{
       type:Boolean,
       default:false
-    }
+    },
+    id:[String,Number],
+    value:{
+      type:[Boolean,String],
+      default:false
+    },
+    name:String,
+    label:String
   },
   data(){
     return{
       counterArray:[],
-      picked:''
+      picked:{},
+      currentValue:this.value,
+      groupName:this.name
     };
   },
   methods:{
-    onClick(){
-      this.picked = this.$refs.input1.value;
+    onClick(e){
+      this.picked.index=e.target.dataset.id;
+      this.picked.value=e.target.value;
       this.$emit('getValue',this.picked);
     }
   }
