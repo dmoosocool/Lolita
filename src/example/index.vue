@@ -5,7 +5,7 @@
         <br/>
         <p class="words">{{ msg }}</p>
     </div>
-    <loli-accordion title="基础组件" show>
+    <loli-accordion title="基础组件">
       <template v-for="item in routers.base">
         <loli-accordion-item :key="item.text">
           <router-link :to="{ path: item.path}">{{item.text}}</router-link>
@@ -65,9 +65,6 @@ export default {
           {
             text: 'Message - 消息框',
             path: 'message'
-          },{
-            text:'collapse -折叠菜单',
-            path:'collapse'
           }
         ],
         form: [
@@ -97,16 +94,11 @@ export default {
             path: 'Header'
           },
           {
-            text: 'popup - 弹出框',
-            path: 'popup'
-          },
-          {
             text:'input - 输入框',
             path:'input'
           },
           {
             text:'Actionsheet - 底部弹出框',
-
             path:'Actionsheet'
           }
         ]

@@ -1,7 +1,7 @@
 <template>
    <div class="loli-steps">
      <div class="loli-step-line"><i v-if="stepLine" :class="['loli-step-line-'+lineColors]"></i></div>
-     <div class="loli-step-circle" :class="['loli-step-circle-'+stepCircle]"><span :class="[successOrfail]">{{num}}</span></div>
+     <div class="loli-step-circle" :class="['loli-step-circle-'+stepCircle]"><span class="icon anticon" :class="[!num?successOrfail?'icon-check':'icon-close':'']">{{num}}</span></div>
      <div class="loli-step-title">
         <h4>{{title}}</h4>
         <div class="loli-step-content">{{description}}</div>
@@ -66,21 +66,19 @@ export default {
     &-error
       border-color #ff3300
     span 
-      width 10px
-      height 24px 
+      width 14px
+      font-size 14px
+      line-height 14px
       position absolute 
       left 50%
       top 50% 
-      line-height 24px
       transform translate(-50%,-50%)
       text-align center 
       color #ccc
-    .success
-      background url('../../assets/icon_success.png') no-repeat center
-      background-size 120%
-    .fail
-      background url('../../assets/icon_close.png') no-repeat center
-      background-size 120%
+    .icon-check
+      color #0469c8
+    .icon-close
+      color #ff3300
   .loli-step-title
     width 300px
     padding 4px 12px

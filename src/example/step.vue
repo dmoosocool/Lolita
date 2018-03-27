@@ -1,7 +1,7 @@
 <template>
     <div class="step">
       <div class="title">默认steps</div>
-      <loli-steps current="2">
+      <loli-steps current="1">
           <loli-step title="步骤一" description="这里是描述信息"></loli-step>
           <loli-step title="步骤一" description="这里是描述信息"></loli-step>
           <loli-step title="步骤一" description="这里是描述信息"></loli-step>
