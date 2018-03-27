@@ -41,8 +41,8 @@ export default {
     }
   },
   props:{
-    current:[Number,String],
-    status:String,
+    current:[ Number, String ],
+    status: String,
   },
   mounted:function(){
     this.updateCurrent();

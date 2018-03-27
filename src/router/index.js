@@ -17,6 +17,7 @@ import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
 import Actionsheet from '@/example/actionsheet';
+import Icon from '@/example/icon';
 
 Vue.use(Router);
 export default new Router({
@@ -107,9 +108,9 @@ export default new Router({
     component: Input
   },
   {
-    path: '/dialog',
-    name: 'Dialog',
-    component: Dialog
+    path: '/icon',
+    name: 'Icon',
+    component: Icon
   }
   ]
 });

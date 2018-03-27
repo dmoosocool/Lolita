@@ -1,5 +1,10 @@
 <template>
-<div id="outerBox">
+<div id="example" style="margin-top: 20px;">
+  <loli-header fixed>
+    <router-link :to="{path: '/'}" slot="left">返回</router-link>
+    <span slot="title">Actionsheet - 底部弹出框</span>
+  </loli-header>
+
      <Actionsheet
       :options="options"
       @comform="comformSure"
@@ -99,8 +104,6 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-#outerBox
-  margin-top 40px
 .lolita-seletro-group
   padding 0 15px
   margin-bottom 30px

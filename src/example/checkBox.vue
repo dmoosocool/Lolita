@@ -1,6 +1,5 @@
 <template>
    <div id='example'>
-
       <loli-header fixed>
         <router-link :to="{path: '/'}" slot="left">返回</router-link>
         <span slot="title">checkBox - 复选框</span>
@@ -27,7 +26,7 @@
       <div class="container">
         <loli-checkbox-item v-model="disabledSingle" isdisabled label="复选框禁用状态"></loli-checkbox-item>
       </div>
-      
+
       <div class="demo-block-title">
         <span>checkBox - 复选框组</span>
       </div>
@@ -43,9 +42,9 @@
     </div>
 
 </template>
-  
+
 <script>
-  
+
 export default {
   data() {
     return {

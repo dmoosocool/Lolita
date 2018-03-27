@@ -2,7 +2,7 @@
    <div id='example'>
       <loli-header fixed>
         <router-link :to="{path: '/'}" slot="left">返回</router-link>
-        <span slot="title">Input - input输入框</span>
+        <span slot="title">Input - 输入框</span>
       </loli-header>
 
       <div class="demo-block-title">
@@ -10,7 +10,7 @@
       </div>
       <loli-input v-model="inputBace" placeholder="基础用法"></loli-input>
       <span class="tipcolor">{{inputBace}}</span>
-      
+
       <div class="demo-block-title">
         <span>input输入框 - 切换type</span>
       </div>
@@ -21,7 +21,6 @@
         <span>input输入框 - 禁用状态</span>
       </div>
       <loli-input isDisabled placeholder="禁用状态"></loli-input>
-   
       <div class="demo-block-title">
             <span>input输入框 - 可删除</span>
           </div>
@@ -29,9 +28,9 @@
           <span class="tipcolor">{{inputDelete}}</span>
       </div>
 </template>
-  
+
 <script>
-  
+
 export default {
   data() {
     return {
@@ -41,10 +40,10 @@ export default {
     };
   },
   created() {
-      
+
   },
   methods: {
-      
+
   }
 };
 </script>

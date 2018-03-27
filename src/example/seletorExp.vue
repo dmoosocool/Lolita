@@ -1,5 +1,10 @@
 <template>
-<div id="outerBox">
+<div id="example" style="margin-top:20px;">
+  <loli-header fixed>
+    <router-link :to="{path: '/'}" slot="left">返回</router-link>
+    <span slot="title">Seletor - 选择器</span>
+  </loli-header>
+
   <div class="lolita-seletro-group">
     <h2 class="seletor-group-title">学历</h2>
     <div
@@ -59,8 +64,6 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-#outerBox
-  margin-top 40px
 .lolita-seletro-group
   padding 0 15px
 .seletor-group-title
