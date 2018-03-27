@@ -16,6 +16,7 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "babel-runtime": "^6.26.0",
+    "clipboard": "^2.0.0",
     "lib-flexible": "^0.3.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

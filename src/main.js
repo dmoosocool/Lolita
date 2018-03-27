@@ -4,7 +4,6 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import 'lib-flexible';
-import '@/assets/iconfont/iconfont.css';
 
 import Row from '@/components/row';
 import Col from '@/components/col';
@@ -25,7 +24,8 @@ import Input from '@/components/input';
 import Message from '@/components/message';
 import Actionsheet from '@/components/actionsheet/index';
 import Steps from '@/components/steps/index.js';
-
+import Icon from '@/components/icon';
+import '@/assets/iconfont/iconfont.css';
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -47,6 +47,7 @@ Vue.component('loli-message', Message);
 Vue.component('loli-actionsheet', Actionsheet);
 Vue.component('loli-steps', Steps);
 Vue.component('loli-step', Steps.step);
+Vue.component('loli-icon', Icon);
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */

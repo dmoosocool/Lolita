@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name:'example-loading', 
+  name:'example-loading',
   data(){
     return{
       loaderShow1:true,
@@ -18,10 +18,12 @@ export default {
   methods:{
     loading1:function(){
       this.loaderShow1 = false;
+
       setTimeout(()=>{
         this.loaderShow1 = true;
       },1000);
     },
+
     loading2:function(){
       this.loaderShow2 = false;
       setTimeout(()=>{

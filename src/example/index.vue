@@ -35,6 +35,10 @@ export default {
             path: 'layout'
           },
           {
+            text: 'Icon - 图标',
+            path: 'icon'
+          },
+          {
             text: 'Accordion - 手风琴',
             path: 'accordion'
           },
