@@ -67,7 +67,7 @@ export default {
             path: 'dialog'
           },
           {
-            text: 'Message - 消息框',
+            text: 'Message - 消息提示框',
             path: 'message'
           }
         ],
@@ -77,7 +77,7 @@ export default {
             path: 'button'
           },
           {
-            text: 'Selection - checkBox',
+            text: 'Selection - 选择框',
             path: 'selection'
           },
           {

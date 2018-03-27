@@ -1,11 +1,29 @@
 <template>
-  <div id="headerExample">
-    <loli-button type="primary" tag="button" size="large" @click="showOne">一个按钮的弹框</loli-button>
-    <loli-button type="primary" tag="button" size="large" @click="showTwo">两个按钮的弹框</loli-button>
-    <loli-button type="primary" tag="button" size="large" @click="showTitle">带标题的弹框</loli-button>
+  <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">Dialog - 对话框</span>
+    </loli-header>
+
+    <div class="demo-block-title">
+      <span>一个按钮的对话框</span>
+    </div>
+    <loli-button type="default" tag="button" @click="showOne">一个按钮的对话框</loli-button>
+
+    <div class="demo-block-title">
+      <span>两个按钮的对话框</span>
+    </div>
+    <loli-button type="default" tag="button" @click="showTwo">两个按钮的对话框</loli-button>
+
+    <div class="demo-block-title">
+      <span>带标题的对话框</span>
+    </div>
+    <loli-button type="default" tag="button" @click="showTitle">带标题的对话框</loli-button>
+
     <loli-dialog @status="getOneStatus" :show="isShowOne">只有一个按钮</loli-dialog>
     <loli-dialog @status="getTwoStatus" :show="isShowTwo" isTwo>两个按钮</loli-dialog>
     <loli-dialog @status="getTitleStatus" :show="isShowTitle" isTwo :title="'带标题的'">带标题的两个按钮</loli-dialog>
+
   </div>
 </template>
 <script>
@@ -45,13 +63,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-#headerExample {
-  margin: 10px;
-
-  .loli-button {
-    margin-bottom: 10px;
-  }
-}
+.loli-button
+  margin-bottom 10px
 </style>
 
 

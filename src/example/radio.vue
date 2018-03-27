@@ -1,5 +1,10 @@
 <template>
   <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">Radio - 单选框</span>
+    </loli-header>
+
     <div class="demo-block-title">
       <span>radio - 基础用法</span>
     </div>
@@ -7,7 +12,7 @@
       <loli-radio-item label="value1" customizeValue="value1" customizeText="单选基础用法1" customizeName="1"></loli-radio-item>
       <loli-radio-item label="value2" customizeValue="value2" customizeText="单选基础用法2" customizeName="1"></loli-radio-item>
     </div>
-    
+
     <div class="demo-block-title">
       <span>radio - 禁用状态</span>
     </div>
@@ -15,7 +20,7 @@
       <loli-radio-item isdisabled label="value1" customizeValue="value1" customizeText="单选基础用法1" customizeName="1"></loli-radio-item>
       <loli-radio-item isdisabled label="value2" customizeValue="value2" customizeText="单选基础用法2" customizeName="1"></loli-radio-item>
     </div>
-    
+
     <div class="demo-block-title">
       <span>radio - 单选组</span>
     </div>
@@ -27,7 +32,7 @@
       </loli-radio>
       <span class="tipColor">选择项为===>{{picked}}</span>
     </div>
-    
+
   </div>
 </template>
 <script>
