@@ -1,5 +1,11 @@
 <template>
    <div id='example'>
+
+      <loli-header fixed>
+        <router-link :to="{path: '/'}" slot="left">返回</router-link>
+        <span slot="title">checkBox - 复选框</span>
+      </loli-header>
+
       <div class="demo-block-title">
         <span>checkBox - 基础用法</span>
       </div>
