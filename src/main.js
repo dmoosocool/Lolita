@@ -26,6 +26,7 @@ import Actionsheet from '@/components/actionsheet/index';
 import Steps from '@/components/steps/index.js';
 import Icon from '@/components/icon';
 import '@/assets/iconfont/iconfont.css';
+import InputNumber from '@/components/inputNumber/index';
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -48,6 +49,7 @@ Vue.component('loli-actionsheet', Actionsheet);
 Vue.component('loli-steps', Steps);
 Vue.component('loli-step', Steps.step);
 Vue.component('loli-icon', Icon);
+Vue.component('loli-inputNumber', InputNumber);
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
