@@ -44,7 +44,7 @@ export default {
         width 12px
         height 12px
         margin 9px 0 0 9px
-        background url(../../assets/xIcon.png) center center
+        background url(../../../assets/xIcon.png) center center
         background-size 100%
   .sel-comform
     top: 3px

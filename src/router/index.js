@@ -16,9 +16,8 @@ import Progress from '@/example/progress';
 import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
-import Actionsheet from '@/example/actionsheet';
 import Collapse from '@/example/collapse';
-
+import TreeSelector from '@/example/treeSelector';
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -98,11 +97,6 @@ export default new Router({
     component: Message
   },
   {
-    path: '/Actionsheet',
-    name: 'Actionsheet',
-    component: Actionsheet
-  },
-  {
     path: '/collapse',
     name: 'Collapse',
     component: Collapse
@@ -116,5 +110,11 @@ export default new Router({
     path: '/dialog',
     name: 'Dialog',
     component: Dialog
-  }]
+  },
+  {
+    path: '/TreeSelector',
+    name: 'TreeSelector',
+    component: TreeSelector
+  }
+  ]
 });

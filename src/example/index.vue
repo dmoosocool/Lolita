@@ -106,8 +106,10 @@ export default {
           },
           {
             text:'Actionsheet - 底部弹出框',
-
             path:'Actionsheet'
+          },{
+            text:'TreeSelector - 多级联动',
+            path:'TreeSelector'
           }
         ]
       },

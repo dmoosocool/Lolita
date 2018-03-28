@@ -58,17 +58,17 @@ export default {
       overflow hidden
       text-overflow:ellipsis;
       white-space: nowrap;
-    i 
+    i
       width 14px
       height 14px
       background url('../../assets/arrow.png') no-repeat center
       backgground-size cover
       font-style normal
       transition .2s all ease
-    .entryActive 
+    .entryActive
       transform rotate(90deg)
       transform-origin center
-    .leaveActive 
+    .leaveActive
       transform:rotate(0);
       transform-origin:center;
   .loli-content
@@ -76,7 +76,7 @@ export default {
     font-size 13px
     background #fff
     max-height 150px
-    overflow hidden 
+    overflow hidden
     overflow-y auto
     overflow-scrolling: touch;
 </style>

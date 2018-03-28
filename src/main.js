@@ -22,10 +22,10 @@ import Loading from '@/components/loading';
 import Progress from '@/components/progress';
 import Input from '@/components/input';
 import Message from '@/components/message';
-import Actionsheet from '@/components/actionsheet/index';
 import Steps from '@/components/steps/index.js';
 import Collapse from '@/components/collapse/index.js';
-
+import Seletor from '@/components/seletor/index.vue';
+import TreeSelector from '@/components/treeSelector/index.vue';
 
 Vue.component('loli-header', Header);
 Vue.component('loli-button', Button);
@@ -44,11 +44,12 @@ Vue.component('loli-loading', Loading);
 Vue.component('loli-progress', Progress);
 Vue.component('loli-input', Input);
 Vue.component('loli-message', Message);
-Vue.component('loli-actionsheet', Actionsheet);
 Vue.component('loli-steps', Steps);
 Vue.component('loli-step', Steps.step);
 Vue.component('loli-collapse', Collapse);
 Vue.component('loli-panel', Collapse.Panel);
+Vue.component('loli-seletor', Seletor);
+Vue.component('loli-tree-selector', TreeSelector);
 
 
 Vue.config.productionTip = false;
