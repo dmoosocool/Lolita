@@ -1,5 +1,10 @@
 <template>
   <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">selection - 自定义选择</span>
+    </loli-header>
+
     <div class="demo-block-title">
       <span>selection</span>
     </div>

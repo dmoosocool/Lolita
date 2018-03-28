@@ -1,8 +1,21 @@
 <template>
-  <div id="messageExample">
-    <loli-button type="primary" tag="button" size="large" @click="showIt1">自动消失（默认500毫秒）</loli-button>
+  <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">Message - 消息提示框</span>
+    </loli-header>
+
+    <div class="demo-block-title">
+      <span>自动消失（默认500毫秒）</span>
+    </div>
+
+    <loli-button type="default" tag="button" @click="showIt1">自动消失（默认500毫秒）</loli-button>
     <loli-message :text="text" :show="status1" @messageCb='messageCb1'/>
-    <loli-button type="primary" tag="button" size="large" @click="showIt2">2秒后消失</loli-button>
+
+    <div class="demo-block-title">
+      <span>2秒后消失</span>
+    </div>
+    <loli-button type="default" tag="button" @click="showIt2">2秒后消失</loli-button>
     <loli-message :text="text" :time="2000" :show="status2" @messageCb='messageCb2'/>
   </div>
 </template>
@@ -32,13 +45,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-#messageExample {
-  margin: 10px;
-
-  .loli-button {
-    margin-bottom: 10px;
-  }
-}
+.loli-button
+  margin-bottom: 10px;
 </style>
 
 

@@ -2,12 +2,13 @@
   <div class="loli-panel" ref="loliPanel">
     <div class="loli-panel-title" @click="toggle">
       <span><slot></slot></span>
-      <i ref="icon" :class="[isActive?'entryActive':'leaveActive']"></i>
+      <i ref="icon" class="icon anticon icon-right" :class="[isActive?'entryActive':'leaveActive']"></i>
     </div>
     <div class="loli-content"><slot name="content"></slot></div>
   </div>
 </template>
 <script>
+import '@/assets/iconfont/iconfont.css';
 export default {
   name:'panel',
   data(){
@@ -21,7 +22,7 @@ export default {
       this.$refs.loliPanel.style.height = this.$refs.loliPanel.scrollHeight + 'px';
     },
     hide:function(){
-      this.$refs.loliPanel.style.height = '38px';
+      this.$refs.loliPanel.style.height = '49px';
     },
     toggle () {
       this.$parent.toggle({
@@ -39,32 +40,32 @@ export default {
 .loli-panel
   overflow hidden
   transition .2s all ease
-  border 1px solid #dddee1
+  border 1px solid #ebeef5
+  border-right none
+  border-left none
   border-radius 0 3px
   height 38px
   margin-top -1px
   &-title
-    height 38px
-    line-height 38px
+    height 49px
     display flex
     justify-content space-between
     align-items center
-    color #666
+    color #303133
     padding 0 12px
-    background-color #f7f7f7
+    background-color #fff//#f7f7f7
     span
-      font-size 12px
-      max-height 36px
+      font-size 13px
+      font-weight 500
+      max-height 49px
       overflow hidden
       text-overflow:ellipsis;
       white-space: nowrap;
     i
-      width 14px
-      height 14px
-      background url('../../assets/arrow.png') no-repeat center
-      backgground-size cover
+      font-size 14px
       font-style normal
       transition .2s all ease
+      color #999
     .entryActive
       transform rotate(90deg)
       transform-origin center
@@ -73,12 +74,17 @@ export default {
       transform-origin:center;
   .loli-content
     padding 10px
+    padding-top 0
     font-size 13px
-    background #fff
+    background-color #fff
+    color #303133
     max-height 150px
     overflow hidden
     overflow-y auto
     overflow-scrolling: touch;
+    p
+      font-size 13px
+      color #303133
 </style>
 
 

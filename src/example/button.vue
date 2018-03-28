@@ -1,5 +1,10 @@
 <template>
   <div id="example">
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">Button - 按钮</span>
+    </loli-header>
+
     <div class="demo-block-title">
       <span>按钮类型</span>
     </div>

@@ -18,6 +18,9 @@ import Input from '@/example/input';
 import Message from '@/example/message';
 import Collapse from '@/example/collapse';
 import TreeSelector from '@/example/treeSelector';
+import Icon from '@/example/icon';
+import InputNumber from '@/example/inputNumber';
+
 Vue.use(Router);
 export default new Router({
   mode: 'history',
@@ -97,19 +100,19 @@ export default new Router({
     component: Message
   },
   {
-    path: '/collapse',
-    name: 'Collapse',
-    component: Collapse
-  },
-  {
     path: '/input',
     name: 'Input',
     component: Input
   },
   {
-    path: '/dialog',
-    name: 'Dialog',
-    component: Dialog
+    path: '/icon',
+    name: 'Icon',
+    component: Icon
+  },
+  {
+    path: '/inputNumber',
+    name: 'inputNumber',
+    component: InputNumber
   },
   {
     path: '/TreeSelector',

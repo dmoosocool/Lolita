@@ -1,8 +1,22 @@
 <template>
-  <div>
+  <div id="example">
+
+    <loli-header fixed>
+      <router-link :to="{path: '/'}" slot="left">返回</router-link>
+      <span slot="title">popup - 弹出组件</span>
+    </loli-header>
+
+    <div class="demo-block-title">
+      <span>弹出组件 - 内容自定义</span>
+    </div>
+
+
     <loli-row>
-      <loli-col :span=10 :offset=4><loli-button type="default" tag="button" size="large" @click="close">弹出组件</loli-button></loli-col></loli-row>
-    
+      <loli-col :span=10>
+        <loli-button type="default" tag="button" @click="close">Click me!!</loli-button>
+      </loli-col>
+    </loli-row>
+
     <loli-popup title="这是标题内容" :show="show" :change.sync="show">
       <!--要插入的内容-->
       <div class="pupContent">
@@ -49,8 +63,8 @@ export default {
         url:require('../assets/bank_list.png'),
         bankName:'建设银行'
       }]
-    }; 
-  }, 
+    };
+  },
   methods:{
     close:function(){
       this.show = !this.show;
@@ -65,31 +79,31 @@ export default {
 <style lang='stylus' scoped>
 .popupRight
   &.fade-enter-active, &.fade-leave-active
-    transition: all 1s ease     
+    transition: all 1s ease
   &.fade-enter, &.fade-leave-active
-    opacity: 0 
+    opacity: 0
 .pupContent
   height 420px
-  justify-content center 
-  align-items  center  
-  flex-wrap wrap 
+  justify-content center
+  align-items  center
+  flex-wrap wrap
   padding 0 15px
   div
-    height 40px 
-    width 50% 
-    display flex 
-    justify-content center 
-    align-items  center 
-    position relative 
+    height 40px
+    width 50%
+    display flex
+    justify-content center
+    align-items  center
+    position relative
     float left
-    i 
-      margin-right 10px 
-      background-size  3rem 8.9rem 
-      width  33px 
-      height  34px 
-      background-position -1px -32px 
+    i
+      margin-right 10px
+      background-size  3rem 8.9rem
+      width  33px
+      height  34px
+      background-position -1px -32px
     p
-      font-size 16px 
+      font-size 16px
 </style>
 
 
