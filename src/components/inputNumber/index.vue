@@ -20,6 +20,7 @@
         :steps="steps"
         class="loli-inputNumber-content"
         :class="{isdisabled:disabled}"
+        @input="emitInput"
       >
    </div>
 </template>
@@ -44,7 +45,7 @@ export default {
     steps:{
       type:Number,
       default:1
-    }
+    },
   },
   data() {
     return {
@@ -53,34 +54,53 @@ export default {
       toMax:false
     };
   },
+  watch:{
+    value:{
+      handler(value){
+        let newVal = value === undefined ? value : Number(value);
+        if (newVal !== undefined && isNaN(newVal)) return;
+        if (newVal >= this.max) {newVal = this.max;}
+        if (newVal <= this.min){newVal = this.min;}
+        this.currentValue = newVal;
+        this.$emit('input', newVal);
+      }
+    }
+  },
   methods: {
+    emitInput(e){
+      this.currentValue = parseInt(e.target.value)||'';
+      this.setCurrentValue(this.currentValue);
+      this.$emit('input', this.currentValue);
+    },
     numberDecrease(){
-      if(this.steps){
-        this.currentValue=this.currentValue-this.steps;
-      }else{
-        this.currentValue--;
-      }
-      if(this.currentValue<this.min){
-        this.currentValue=1;
-        this.toMin = true;
-      }
       this.disabled && (this.currentValue=this.value);
-      this.toMax = false;
+      this.currentValue=this.currentValue-this.steps;
+      this.setCurrentValue(this.currentValue);
       this.$emit('input', this.currentValue);
     },
     numberIncrease(){
-      if(this.steps){
-        this.currentValue=this.currentValue+this.steps;
-      }else{
-        this.currentValue++;
-      }
-      if(this.currentValue>this.max){
-        this.currentValue = this.max;
-        this.toMax = true;
-      }
       this.disabled && (this.currentValue=this.value);
-      this.toMin = false;
+      this.currentValue=this.currentValue+this.steps;
+      this.setCurrentValue(this.currentValue);
       this.$emit('input', this.currentValue);
+    },
+    setCurrentValue(currentValue){
+      if(currentValue>=this.max){
+        currentValue = this.max;
+        this.toMax=true;
+        this.toMin=false;
+        return;
+      }else if(currentValue>this.min && currentValue<this.max){
+        currentValue=currentValue;
+        this.toMax = false;
+        this.toMin = false;
+        return;
+      }else{
+        currentValue = this.min;
+        this.toMin=true;
+        this.toMax=false;
+        return;
+      }
     }
   }
 };

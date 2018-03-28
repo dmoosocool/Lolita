@@ -18,7 +18,7 @@
     <div class="demo-block-title">
       <span>inputNumber--自定义增减步数</span>
     </div>
-    <loli-inputNumber v-model="valueThree" :steps="steps" :min="1" :max="10"></loli-inputNumber>
+    <loli-inputNumber v-model="valueThree" :steps="steps" :min="1" :max="100"></loli-inputNumber>
   
    </div>
 
@@ -36,7 +36,7 @@ export default {
       valueOne:1,
       valueTwo:2,
       valueThree:3,
-      steps:2
+      steps:20
     };
   },
   created() {
