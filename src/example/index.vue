@@ -104,6 +104,10 @@ export default {
           {
             text:'Actionsheet - 底部弹出框',
             path:'Actionsheet'
+          },
+          {
+            text:'InputNumber - 计数器',
+            path:'InputNumber'
           }
         ]
       },
