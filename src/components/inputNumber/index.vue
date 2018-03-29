@@ -20,7 +20,7 @@
         :steps="steps"
         class="loli-inputNumber-content"
         :class="{isdisabled:disabled}"
-        @input="emitInput"
+        @change="emitInput"
       >
    </div>
 </template>
@@ -30,7 +30,7 @@
 export default {
   props:{
     value:{
-      type:Number,
+      type:[Number,String],
       default:1
     },
     min:{
@@ -118,7 +118,7 @@ export default {
       line-height 33px
       text-align center
       font-size 14px
-      border 1px solid #dadde4
+      border 1px solid #dadde4 /*no*/
       top 0
       &.isdisabled
         background-color #f5f7fa
@@ -132,7 +132,7 @@ export default {
       top 0px
       left 38px
       outline none
-      border 1px solid #dadde4
+      border 1px solid #dadde4 /*no*/
       border-left none
       border-right none
       width 93px

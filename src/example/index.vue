@@ -69,6 +69,10 @@ export default {
           {
             text: 'Message - 消息提示框',
             path: 'message'
+          },
+          {
+            text: 'Slider - 滑块',
+            path: 'slider'
           }
         ],
         form: [
