@@ -23,6 +23,10 @@ import Progress from '@/components/progress';
 import Input from '@/components/input';
 import Message from '@/components/message';
 import Steps from '@/components/steps/index.js';
+import Icon from '@/components/icon';
+import '@/assets/iconfont/iconfont.css';
+import InputNumber from '@/components/inputNumber/index';
+import Slider from '@/components/slider/index';
 import Collapse from '@/components/collapse/index.js';
 import Seletor from '@/components/seletor/index.vue';
 import TreeSelector from '@/components/treeSelector/index.vue';
@@ -46,11 +50,13 @@ Vue.component('loli-input', Input);
 Vue.component('loli-message', Message);
 Vue.component('loli-steps', Steps);
 Vue.component('loli-step', Steps.step);
+Vue.component('loli-icon', Icon);
+Vue.component('loli-inputNumber', InputNumber);
+Vue.component('loli-slider', Slider);
 Vue.component('loli-collapse', Collapse);
 Vue.component('loli-panel', Collapse.Panel);
 Vue.component('loli-seletor', Seletor);
 Vue.component('loli-tree-selector', TreeSelector);
-
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
