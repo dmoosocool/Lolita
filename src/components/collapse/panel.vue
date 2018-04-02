@@ -41,7 +41,7 @@ export default {
   overflow hidden
   transition .2s all ease
   border 1px solid #ebeef5
-  border-right none 
+  border-right none
   border-left none
   border-radius 0 3px
   height 38px
@@ -66,10 +66,10 @@ export default {
       font-style normal
       transition .2s all ease
       color #999
-    .entryActive 
+    .entryActive
       transform rotate(90deg)
       transform-origin center
-    .leaveActive 
+    .leaveActive
       transform:rotate(0);
       transform-origin:center;
   .loli-content
@@ -79,7 +79,7 @@ export default {
     background-color #fff
     color #303133
     max-height 150px
-    overflow hidden 
+    overflow hidden
     overflow-y auto
     overflow-scrolling: touch;
     p

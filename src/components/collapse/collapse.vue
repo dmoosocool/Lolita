@@ -16,6 +16,7 @@ export default {
       this.$children.forEach((child, index) => {
         const name = child.name || index.toString();
         let isActive = false;
+
         if (self.accordion) {
           isActive = activeKey === name;
         } else {
@@ -24,7 +25,6 @@ export default {
         child.isActive = isActive;
         child.index = index;
         child.isActive?child.show():child.hide();
-            
       });
     },
     getActiveKey () {

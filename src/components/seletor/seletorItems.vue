@@ -2,7 +2,7 @@
   <div class="seletor-list">
     <div
       class="ipt-grounp"
-      v-for="data in dataList"
+      v-for="data in datas"
       :key=data.code
     >
       <input type="radio" name="lolita-sel" :id="data.name" >
@@ -13,7 +13,7 @@
 <script>
 export default {
   props:{
-    dataList:{
+    datas:{
       type:Array,
       required:true
     }
@@ -36,7 +36,7 @@ export default {
     min-height: 220px
     max-height: 300px
     overflow-y: scroll
-    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
     padding-bottom: 40px
   .ipt-grounp
     display: block;
