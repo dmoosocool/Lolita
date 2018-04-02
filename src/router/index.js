@@ -120,6 +120,7 @@ export default new Router({
     name: 'slider',
     component: Slider
   },
+  {
     path: '/TreeSelector',
     name: 'TreeSelector',
     component: TreeSelector
