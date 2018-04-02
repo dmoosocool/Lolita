@@ -20,6 +20,7 @@ import Collapse from '@/example/collapse';
 import TreeSelector from '@/example/treeSelector';
 import Icon from '@/example/icon';
 import InputNumber from '@/example/inputNumber';
+import Slider from '@/example/slider';
 
 Vue.use(Router);
 export default new Router({
@@ -113,6 +114,11 @@ export default new Router({
     path: '/inputNumber',
     name: 'inputNumber',
     component: InputNumber
+  },
+  {
+    path: '/slider',
+    name: 'slider',
+    component: Slider
   },
   {
     path: '/TreeSelector',
