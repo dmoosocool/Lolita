@@ -64,7 +64,7 @@ export default {
       width: 100%
       height: 37px
       line-height: 37px
-      border: 1px solid #8098a9
+      border: 1px solid #8098a9;/*no*/
       border-radius: 6px
       overflow: hidden
 </style>

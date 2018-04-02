@@ -73,7 +73,7 @@ export default {
     line-height: 50px
     font-size: 18px
     opacity: .9
-    border-bottom: 1px solid #d1dfe9
+    border-bottom: 1px solid #d1dfe9;/*no*/
   .placeholder
     font-size: 14px
     color #999

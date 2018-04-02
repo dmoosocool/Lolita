@@ -4,7 +4,7 @@
       <span
       v-for="(ax,idx) in options.xAxis"
       :key="idx"
-      :class="[idx!=options.xAxis.length-1?(tabsList[idx].val?'':tabsList[idx].flag?'tabs-active':'tabs-off'):(tabsList[idx].flag?'tabs-active':'tabs-off')]"
+      :class="titleCls(idx)"
       @click="navTabsEvent" :data-lv='idx'
       >
         {{titleTabViewTxt(idx)}}
@@ -42,7 +42,7 @@ export default {
     },
     result:{
       type:Object
-    },
+    }
 
   },
   beforeMount(){//beforeMount 挂载开始之前被调用，轮询有多少层（最多四层）
@@ -68,26 +68,49 @@ export default {
     itemsTabEvent(e){
       const tg = e.target;
       const idx = tg.dataset.lv*1;
+      const tgTxt = tg.innerText;
       this.tabsList[idx].val=tg.innerText;
       this.tabsList[idx].code=tg.dataset.id;
-      if(idx==this.tabsList.length-1){//最后一项不用替换标题
+      this.tabsList[idx].noNxet = false;
+      this.$emit('itemtab',{lv:idx,el:e});
+      let nextLvData = this.items.data.filter(function(v,i){
+        return v.name == tgTxt;
+      });
+      if(idx==this.tabsList.length-1||(idx<this.tabsList.length-1 && nextLvData[0].data.toString()=='' )){//最后一项或下一才呢过 不用替换标题
         const siblings = tg.parentNode.childNodes;
         for(let i=0;i<siblings.length;i++){//相邻兄弟元素去掉选中状态
           if(siblings[i].nodeName=='SPAN'){
             siblings[i].className = '';
           }
         }
+        (idx<this.tabsList.length-1 && nextLvData[0].data.toString()=='')&&( this.tabsList[idx].noNxet = true);
         tg.className='items-active';//
-
       }else {
         this.tabsList[idx+1].flag=1;//头部的下一个tab按钮激活状态
       }
       this.currentSeletItems();
-      this.$emit('itemtab',{lv:idx,el:e});
     },
-    titleTabViewTxt(i){//computed方式 不能传递参数，用methods
+    titleCls(i){
+      // idx!=options.xAxis.length-1?(tabsList[idx].val?'':tabsList[idx].flag?'tabs-active':'tabs-off'):(tabsList[idx].flag?'tabs-active':'tabs-off')
+      let cls = '';
+      if(i!=this.options.xAxis.length-1){
+        if(this.tabsList[i].val&&!this.tabsList[i].noNxet){
+          cls='';
+        }else if((this.tabsList[i].val&&this.tabsList[i].noNxet)||this.tabsList[i].flag){
+          cls = 'tabs-active';
+        }else {
+          cls = 'tabs-off';
+        }
+        // cls = this.tabsList[i].val?'':this.tabsList[i].flag?'tabs-active':'tabs-off';
+        // cls=(this.tabsList[i].val && this.tabsList[i].noNxet)?'':this.tabsList[i].flag?'tabs-active':'tabs-off';
+      }else {
+        cls = this.tabsList[i].flag?'tabs-active':'tabs-off';
+      }
+      return cls;
+    },
+    titleTabViewTxt(i){
       let txt = this.options.xAxis[i];
-      i<this.tabsList.length-1 && this.tabsList[i].val!=''&& (txt = this.tabsList[i].val);
+      i<this.tabsList.length-1 && !this.tabsList[i].noNxet&& this.tabsList[i].val!=''&& (txt = this.tabsList[i].val);
       return txt;
     },
     currentSeletItems(){//每操作一次都计算已选项的结果
@@ -103,8 +126,6 @@ export default {
         }
       }
     },
-  },
-  computed:{
   }
 };
 </script>
@@ -112,7 +133,7 @@ export default {
 .loli-tabs
   padding-left: 5%
   height: 31px
-  border-bottom: 1px solid #EBF0F4
+  border-bottom: 1px solid #EBF0F4;/*no*/
   & span
     font-size: 15px
     height: 31px
