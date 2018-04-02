@@ -16,7 +16,8 @@ import Progress from '@/example/progress';
 import Step from '@/example/step';
 import Input from '@/example/input';
 import Message from '@/example/message';
-import Actionsheet from '@/example/actionsheet';
+import Collapse from '@/example/collapse';
+import TreeSelector from '@/example/treeSelector';
 import Icon from '@/example/icon';
 import InputNumber from '@/example/inputNumber';
 import Slider from '@/example/slider';
@@ -100,11 +101,6 @@ export default new Router({
     component: Message
   },
   {
-    path: '/Actionsheet',
-    name: 'Actionsheet',
-    component: Actionsheet
-  },
-  {
     path: '/input',
     name: 'Input',
     component: Input
@@ -124,5 +120,9 @@ export default new Router({
     name: 'slider',
     component: Slider
   },
+    path: '/TreeSelector',
+    name: 'TreeSelector',
+    component: TreeSelector
+  }
   ]
 });

@@ -90,8 +90,7 @@ export default {
       i<this.tabsList.length-1 && this.tabsList[i].val!=''&& (txt = this.tabsList[i].val);
       return txt;
     },
-    currentSeletItems(){//没操作一次都计算已选项的结果
-      this.result.name = this.options.title;
+    currentSeletItems(){//每操作一次都计算已选项的结果
       this.result.resData = [];
       for(let i=0;i<this.tabsList.length;i++){
         if(this.tabsList[i].val!=''){
@@ -130,7 +129,7 @@ export default {
   height: 220px
   overflow-y: scroll
   font-size: 15px
-  -webkit-overflow-scrolling: touch
+  overflow-scrolling: touch
   padding-bottom: 40px
   & span
     padding: 0 5%
