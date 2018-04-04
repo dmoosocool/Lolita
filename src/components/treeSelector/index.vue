@@ -79,6 +79,22 @@ export default {
     },
     navHasBeenTab(lv){
       this.actionLv = lv;
+    },
+    computedItemsData(n){
+      const self = this;
+      let newObj = this.options.data;
+      for(let i=0;i<n&&i<this.options.xAxis.length-1;i++){
+        if(i==0){
+          newObj = newObj.filter(function(item){
+            return item.name == self.result.resData[i].value;
+          });
+        }else {
+          newObj = newObj[0].data.filter(function(item){
+            return item.name == self.result.resData[i].value;
+          });
+        }
+      }
+      return newObj;
     }
   },
   components:{
@@ -89,27 +105,20 @@ export default {
   computed:{
     itemLitsDatas(){
       const self = this;
-      if(this.actionLv==0){
+      if(self.actionLv==0){
         return {
           data:this.options.data,
           lv:this.actionLv
         };
       }else {
-        let newObj = this.options.data;
-        for(let i=0;i<this.actionLv&&i<this.options.xAxis.length-1;i++){
-          if(i==0){
-            newObj = newObj.filter(function(item){
-              return item.name == self.result.resData[i].value;
-            });
-          }else {
-            newObj = newObj[0].data.filter(function(item){
-              return item.name == self.result.resData[i].value;
-            });
-          }
+        let newObj = self.computedItemsData(self.actionLv);
+        if(newObj[0].data.toString()==''){//下一层数据为空,则停留在当层
+          self.actionLv--;
+          newObj =  self.actionLv!=0?( self.computedItemsData(self.actionLv)):self.options.data;
         }
         return {
-          data:newObj[0].data,
-          lv:this.actionLv
+          data: newObj[0].data.toString()==''?newObj:newObj[0].data,//如果下一层数据为空,则停留在当前层
+          lv: self.actionLv
         };
       }
     }
