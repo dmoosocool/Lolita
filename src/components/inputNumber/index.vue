@@ -73,13 +73,13 @@ export default {
       this.$emit('input', this.currentValue);
     },
     numberDecrease(){
-      this.disabled && (this.currentValue=this.value);
+      if(this.disabled){return;}
       this.currentValue=this.currentValue-this.steps;
       this.setCurrentValue(this.currentValue);
       this.$emit('input', this.currentValue);
     },
     numberIncrease(){
-      this.disabled && (this.currentValue=this.value);
+      if(this.disabled){return;}
       this.currentValue=this.currentValue+this.steps;
       this.setCurrentValue(this.currentValue);
       this.$emit('input', this.currentValue);
