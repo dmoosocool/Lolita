@@ -1,0 +1,21 @@
+{
+  "test": {
+    "host": "192.168.1.100",
+    "port": "22",
+    "username": "root",
+    "password": "root",
+    "localpath": "./uploads",
+    "serverpath": "/data/wwwroot/uploads",
+    "shell": "cd /data/wwwroot/maaoo.com/\nrm -rf *\nunzip /data/wwwroot/uploads/{upload_zip_name} -d ./\nnginx -s reload\nexit\n"
+  },
+
+  "prod": {
+    "host": "119.28.32.43",
+    "port": "22",
+    "username": "root",
+    "password": "root",
+    "localpath": "./uploads",
+    "serverpath": "/usr/local/wwwroot",
+    "shell": "cd /data/wwwroot/maaoo.com/\nrm -rf *\nunzip /data/wwwroot/uploads/{upload_zip_name} -d ./\nnginx -s reload\nexit\n"
+  }
+}

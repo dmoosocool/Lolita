@@ -11,7 +11,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "publish": "npm run build && node ./node_modules/fastdeploy/fastdeploy.js --file"
   },
   "dependencies": {
     "animate.css": "^3.6.1",
@@ -48,6 +49,7 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "fastdeploy": "^1.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "graceful-fs": "^4.1.11",
